@@ -2,6 +2,8 @@
 
 Aplicação desktop (navegador) para pesquisa e gerenciamento de cartas de Magic: The Gathering, com a Cogu (a menina cogumelo) como mascote. Sem build, sem dependências: abra `index.html` no navegador.
 
+> **Layout novo ("Galeria + Cogu"):** o `index.html` da raiz é o design repaginado (sidebar lateral, grid de galeria, tema escuro editorial). A versão original está preservada e intacta em **`backup/`** — abra `backup/index.html` para voltar ao layout antigo a qualquer momento. Os dois usam a mesma lógica; só a apresentação muda.
+
 ## Áreas
 
 **🔍 Pesquisa (Home)** — sidebar fixa com pesquisa em português ou inglês (correspondência parcial) e filtros de cor, tipo, custo de mana, raridade, expansão e ordenação. Sem pesquisa ativa, exibe automaticamente a expansão mais recente lançada (detectada dinamicamente via Scryfall — novas coleções aparecem sozinhas). Detalhes/versões abrem num painel lateral.

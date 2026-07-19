@@ -1545,6 +1545,11 @@ td.td-num .wl-price { color: var(--gold); font-weight: 700; }
 }
 .wl-action-link:hover { background: var(--bg-elev-3); color: var(--text); }
 
+/* Coluna "adquirida" (cabeçalho ✓ + célula centralizada) */
+.wl-th-acq { width: 34px; text-align: center; color: var(--acquired); }
+.wl-acq-cell { text-align: center; }
+.wl-row-acquired .wl-acq-cell { opacity: 1; }
+
 /* Selo circular de "adquirida" (usado na tabela e na grade) */
 .wl-acquire {
   display: inline-flex;
