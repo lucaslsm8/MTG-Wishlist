@@ -1,0 +1,2956 @@
+{
+  "object": "deck",
+  "id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+  "name": "Wishlist",
+  "format": null,
+  "layout": "list",
+  "uri": "https://api.scryfall.com/decks/2c95588c-d167-42c3-bed1-8686b38a4d13",
+  "scryfall_uri": "https://scryfall.com/@lucaslsm/decks/2c95588c-d167-42c3-bed1-8686b38a4d13",
+  "description": null,
+  "trashed": false,
+  "in_compliance": true,
+  "sections": {
+    "primary": [
+      "columna"
+    ],
+    "secondary": [
+      "columnb"
+    ]
+  },
+  "entries": {
+    "columnb": [
+      {
+        "object": "deck_entry",
+        "id": "19e3d649-b479-4aab-ac9d-6f48bd6c97bd",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columnb",
+        "cardinality": 347.01,
+        "count": 1,
+        "raw_text": "",
+        "found": false,
+        "printing_specified": false,
+        "finish": false,
+        "card_digest": null
+      }
+    ],
+    "columna": [
+      {
+        "object": "deck_entry",
+        "id": "fd9b34f9-4784-487e-88c4-acaa2e72ca01",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 348.01,
+        "count": 1,
+        "raw_text": "1 Aerith Gainsborough",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "e86328b6-ded2-41df-8b6e-4a770e7b171e",
+          "oracle_id": "dd9a6f6b-f9b7-4292-bc80-b7da326de032",
+          "name": "Aerith Gainsborough",
+          "scryfall_uri": "https://scryfall.com/card/fin/4/aerith-gainsborough",
+          "mana_cost": "{2}{W}",
+          "type_line": "Legendary Creature — Human Cleric",
+          "collector_number": "4",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/e/8/e86328b6-ded2-41df-8b6e-4a770e7b171e.jpg?1748705770"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "2acb2687-4e4b-4a99-921d-10ebc6ae0c98",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 349.01,
+        "count": 1,
+        "raw_text": "1 Aerith Gainsborough",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "f020aa2f-cc1b-4bb4-bf05-4050ea935d66",
+          "oracle_id": "dd9a6f6b-f9b7-4292-bc80-b7da326de032",
+          "name": "Aerith Gainsborough",
+          "scryfall_uri": "https://scryfall.com/card/ppro/2025-3/aerith-gainsborough",
+          "mana_cost": "{2}{W}",
+          "type_line": "Legendary Creature — Human Cleric",
+          "collector_number": "2025-3",
+          "set": "ppro",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/f/0/f020aa2f-cc1b-4bb4-bf05-4050ea935d66.jpg?1764573066"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "9f58ab9d-464b-4feb-baed-01244a986e7b",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 350.01,
+        "count": 1,
+        "raw_text": "1 Aphelia, Viper Whisperer",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "1a0867be-a861-4fb4-b8ff-cb2966193755",
+          "oracle_id": "191e003f-1a78-4d85-9c70-2ae132a5f9cc",
+          "name": "Aphelia, Viper Whisperer",
+          "scryfall_uri": "https://scryfall.com/card/j25/40/aphelia-viper-whisperer",
+          "mana_cost": "{1}{B}",
+          "type_line": "Legendary Creature — Gorgon Assassin",
+          "collector_number": "40",
+          "set": "j25",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/1/a/1a0867be-a861-4fb4-b8ff-cb2966193755.jpg?1730485839"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "885f25f7-c66e-4ea5-a74e-4c796ef44c7d",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 351.01,
+        "count": 1,
+        "raw_text": "1 Azusa, Lost but Seeking",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "4e5fa88e-1ba5-4166-a7c3-cead597c65b8",
+          "oracle_id": "6c2c8bf3-9bf8-4a86-89d3-3bb36260dc51",
+          "name": "Azusa, Lost but Seeking",
+          "scryfall_uri": "https://scryfall.com/card/sld/1234/azusa-lost-but-seeking",
+          "mana_cost": "{2}{G}",
+          "type_line": "Legendary Creature — Human Monk",
+          "collector_number": "1234",
+          "set": "sld",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/e/4e5fa88e-1ba5-4166-a7c3-cead597c65b8.jpg?1682712580"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "97fc83cb-2947-40ac-9143-0a49f24efc28",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 352.01,
+        "count": 1,
+        "raw_text": "1 Balan, Wandering Knight",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "d7f6da2e-3759-4550-999f-2c0fa6c76c73",
+          "oracle_id": "d12cfd46-73c2-4206-9a10-0d2e7d6ac87e",
+          "name": "Balan, Wandering Knight",
+          "scryfall_uri": "https://scryfall.com/card/j22/53/balan-wandering-knight",
+          "mana_cost": "{2}{W}{W}",
+          "type_line": "Legendary Creature — Cat Knight",
+          "collector_number": "53",
+          "set": "j22",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/d/7/d7f6da2e-3759-4550-999f-2c0fa6c76c73.jpg?1675644957"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "1649d4a2-5c07-47db-8c96-b0df944b2110",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 353.01,
+        "count": 1,
+        "raw_text": "1 Brigone, Soldier of Meletis",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "20ecadef-8aa3-4bca-8744-adbc809083c3",
+          "oracle_id": "f328dfb1-0737-478b-bd40-dfcb9a35e5a5",
+          "name": "Brigone, Soldier of Meletis",
+          "scryfall_uri": "https://scryfall.com/card/j25/30/brigone-soldier-of-meletis",
+          "mana_cost": "{1}{W}",
+          "type_line": "Legendary Creature — Human Soldier",
+          "collector_number": "30",
+          "set": "j25",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/2/0/20ecadef-8aa3-4bca-8744-adbc809083c3.jpg?1730485800"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "41e13724-28e2-46d7-ab0e-ca88a9722eef",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 354.01,
+        "count": 1,
+        "raw_text": "1 Burgeoning",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "30641539-de35-46c7-99ab-e4478afe064c",
+          "oracle_id": "88cf4c1a-5863-45fc-b76d-7ad33b175b2b",
+          "name": "Burgeoning",
+          "scryfall_uri": "https://scryfall.com/card/sld/408/burgeoning",
+          "mana_cost": "{G}",
+          "type_line": "Enchantment",
+          "collector_number": "408",
+          "set": "sld",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/3/0/30641539-de35-46c7-99ab-e4478afe064c.jpg?1682712727"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "5c28e7bd-8b62-4df7-85f4-9611c5970ad9",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 355.01,
+        "count": 1,
+        "raw_text": "1 Captain Sisay",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "2b141f71-63b3-45ac-b93a-01a68be5d2b6",
+          "oracle_id": "2e7a9ea9-f76c-4c12-950f-c613fa16cfa8",
+          "name": "Captain Sisay",
+          "scryfall_uri": "https://scryfall.com/card/sld/1913/captain-sisay",
+          "mana_cost": "{2}{G}{W}",
+          "type_line": "Legendary Creature — Human Soldier",
+          "collector_number": "1913",
+          "set": "sld",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/2/b/2b141f71-63b3-45ac-b93a-01a68be5d2b6.jpg?1743952214"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "b4add513-9b12-48e8-a42c-5be55b2e865d",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 356.01,
+        "count": 1,
+        "raw_text": "1 Crypt Ghast",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "c5798e7d-a0e2-4a5e-a796-1b408c81091a",
+          "oracle_id": "a3c8d817-7949-4dae-b9f5-f9d952479270",
+          "name": "Crypt Ghast",
+          "scryfall_uri": "https://scryfall.com/card/rvr/423/crypt-ghast",
+          "mana_cost": "{3}{B}",
+          "type_line": "Creature — Spirit",
+          "collector_number": "423",
+          "set": "rvr",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/c/5/c5798e7d-a0e2-4a5e-a796-1b408c81091a.jpg?1702429862"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "1af0c0b6-0e64-459a-8236-ef14180e7006",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 357.01,
+        "count": 1,
+        "raw_text": "1 Crystal Fragments // Summon: Alexander",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "c2416ecc-bb6b-44f6-8fa6-61d168777f2e",
+          "oracle_id": "b291d046-7649-4a05-98c4-224ecaece912",
+          "name": "Crystal Fragments // Summon: Alexander",
+          "scryfall_uri": "https://scryfall.com/card/fin/357/crystal-fragments-summon:-alexander",
+          "mana_cost": "{W}",
+          "type_line": "Artifact — Equipment // Enchantment Creature — Saga Construct",
+          "collector_number": "357",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/c/2/c2416ecc-bb6b-44f6-8fa6-61d168777f2e.jpg?1748707850",
+            "back": "https://cards.scryfall.io/large/back/c/2/c2416ecc-bb6b-44f6-8fa6-61d168777f2e.jpg?1748707850"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "887fb6ee-784f-4232-a8ee-fed6866d7729",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 358.01,
+        "count": 1,
+        "raw_text": "1 Llanowar Elves",
+        "found": true,
+        "printing_specified": true,
+        "finish": "foil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "cd43a84a-cde2-48f8-b6ab-1ec023c9e0c3",
+          "oracle_id": "68954295-54e3-4303-a6bc-fc4547a4e3a3",
+          "name": "Llanowar Elves",
+          "scryfall_uri": "https://scryfall.com/card/fdn/429/llanowar-elves",
+          "mana_cost": "{G}",
+          "type_line": "Creature — Elf Druid",
+          "collector_number": "429",
+          "set": "fdn",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/c/d/cd43a84a-cde2-48f8-b6ab-1ec023c9e0c3.jpg?1730490231"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "95072c75-345e-49f8-8a22-a14f5835c7ec",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 359.01,
+        "count": 1,
+        "raw_text": "1 Lord of the Accursed",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "d67c2c4c-f593-4e46-910c-616d3135a8b1",
+          "oracle_id": "3f372107-6c52-4f1f-8bf0-7b3fa21b2cae",
+          "name": "Lord of the Accursed",
+          "scryfall_uri": "https://scryfall.com/card/j22/69/lord-of-the-accursed",
+          "mana_cost": "{2}{B}",
+          "type_line": "Creature — Zombie",
+          "collector_number": "69",
+          "set": "j22",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/d/6/d67c2c4c-f593-4e46-910c-616d3135a8b1.jpg?1675645143"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "9d7d7c2b-14e8-447e-a595-15ef90d365a2",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 360.01,
+        "count": 1,
+        "raw_text": "1 Necropotence",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "2765545b-5e2d-4d4c-b126-93415774a2e9",
+          "oracle_id": "94a844d2-0574-45a7-b347-e0e329767c42",
+          "name": "Necropotence",
+          "scryfall_uri": "https://scryfall.com/card/wot/74/necropotence",
+          "mana_cost": "{B}{B}{B}",
+          "type_line": "Enchantment",
+          "collector_number": "74",
+          "set": "wot",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/2/7/2765545b-5e2d-4d4c-b126-93415774a2e9.jpg?1692933148"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "9569ca65-e517-4403-93d9-61b1f65204b7",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 361.01,
+        "count": 1,
+        "raw_text": "1 Polluted Bonds",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "46d8d772-2100-48ac-93eb-6bb4681827bb",
+          "oracle_id": "13b33a41-c22b-4e7a-8323-abadf7f80961",
+          "name": "Polluted Bonds",
+          "scryfall_uri": "https://scryfall.com/card/wot/75/polluted-bonds",
+          "mana_cost": "{3}{B}{B}",
+          "type_line": "Enchantment",
+          "collector_number": "75",
+          "set": "wot",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/6/46d8d772-2100-48ac-93eb-6bb4681827bb.jpg?1692933164"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "46751e81-c4d4-4f35-9e58-3bf6633952ed",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 362.01,
+        "count": 1,
+        "raw_text": "1 Rev, Tithe Extractor",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "8bf88010-799d-4217-8e79-308bec7ad2ff",
+          "oracle_id": "8345eb05-c04e-4c1d-9776-5ab7d91a7842",
+          "name": "Rev, Tithe Extractor",
+          "scryfall_uri": "https://scryfall.com/card/j25/45/rev-tithe-extractor",
+          "mana_cost": "{3}{B}",
+          "type_line": "Legendary Creature — Human Rogue",
+          "collector_number": "45",
+          "set": "j25",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/8/b/8bf88010-799d-4217-8e79-308bec7ad2ff.jpg?1730485859"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "3625472e-f3ae-4b67-bb5e-44a7261d62e9",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 363.01,
+        "count": 1,
+        "raw_text": "1 Serenity",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "49730d61-c68d-40f3-998d-41eae1101cb2",
+          "oracle_id": "f4f751c0-02dc-45a2-a4b0-980592509944",
+          "name": "Serenity",
+          "scryfall_uri": "https://scryfall.com/card/sld/1893/serenity",
+          "mana_cost": "{1}{W}",
+          "type_line": "Enchantment",
+          "collector_number": "1893",
+          "set": "sld",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/9/49730d61-c68d-40f3-998d-41eae1101cb2.jpg?1745327792"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "3721f783-e6b6-4349-a6e9-27169047025f",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 364.01,
+        "count": 1,
+        "raw_text": "1 Stitcher's Supplier",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "10e65e74-14fc-4286-84d3-36c70d6dcf46",
+          "oracle_id": "7fd61a18-6e4f-40c5-aa00-3d101ec1ec82",
+          "name": "Stitcher's Supplier",
+          "scryfall_uri": "https://scryfall.com/card/j22/73/stitchers-supplier",
+          "mana_cost": "{B}",
+          "type_line": "Creature — Zombie",
+          "collector_number": "73",
+          "set": "j22",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/1/0/10e65e74-14fc-4286-84d3-36c70d6dcf46.jpg?1675645189"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "9c203204-2e72-4c35-8aab-bdf7b6477592",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 365.01,
+        "count": 1,
+        "raw_text": "1 Tidus, Yuna's Guardian",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "7f4af6c8-c419-42a9-ae5e-c3b73ea5eeea",
+          "oracle_id": "e8fbcafd-3617-4cd7-b55d-457fb7b60162",
+          "name": "Tidus, Yuna's Guardian",
+          "scryfall_uri": "https://scryfall.com/card/fic/205/tidus-yunas-guardian",
+          "mana_cost": "{G}{W}{U}",
+          "type_line": "Legendary Creature — Human Warrior",
+          "collector_number": "205",
+          "set": "fic",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/7/f/7f4af6c8-c419-42a9-ae5e-c3b73ea5eeea.jpg?1748704941"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "5b52db0b-b22c-4fef-8e66-ef8a261c5e8b",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 366.01,
+        "count": 1,
+        "raw_text": "1 Tifa Lockhart",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "d402d825-4c2c-46db-b16b-5df583bc5f83",
+          "oracle_id": "878df304-9d6d-4ce9-b65b-1439c251f3e0",
+          "name": "Tifa Lockhart",
+          "scryfall_uri": "https://scryfall.com/card/fin/391/tifa-lockhart",
+          "mana_cost": "{1}{G}",
+          "type_line": "Legendary Creature — Human Monk",
+          "collector_number": "391",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/d/4/d402d825-4c2c-46db-b16b-5df583bc5f83.jpg?1748707301"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "7fcd7287-e866-46c1-a0ed-99f00aa48cc2",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 367.01,
+        "count": 1,
+        "raw_text": "1 Tifa, Martial Artist",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "33743b2c-9e30-458d-ada5-fd1cd5b25a5a",
+          "oracle_id": "0836c8d1-c453-4a3a-a52a-eb66839b8542",
+          "name": "Tifa, Martial Artist",
+          "scryfall_uri": "https://scryfall.com/card/fic/206/tifa-martial-artist",
+          "mana_cost": "{1}{R}{G}{W}",
+          "type_line": "Legendary Creature — Human Monk",
+          "collector_number": "206",
+          "set": "fic",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/3/3/33743b2c-9e30-458d-ada5-fd1cd5b25a5a.jpg?1748704946"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "4ddc8bb7-3861-4758-a17b-07831fc2b0d2",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 368.01,
+        "count": 1,
+        "raw_text": "1 Tragic Slip",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "aecbe209-7f91-4add-98e0-e6ffa1739631",
+          "oracle_id": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+          "name": "Tragic Slip",
+          "scryfall_uri": "https://scryfall.com/card/j22/74/tragic-slip",
+          "mana_cost": "{B}",
+          "type_line": "Instant",
+          "collector_number": "74",
+          "set": "j22",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/a/e/aecbe209-7f91-4add-98e0-e6ffa1739631.jpg?1675645202"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "173b8f56-5b24-4e09-adaa-2505fa8ac15d",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 369.01,
+        "count": 1,
+        "raw_text": "1 Tree of Perdition",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "9d4aef6f-10f8-4376-8518-a3165d0df062",
+          "oracle_id": "0cdece2a-0bdf-4e6d-9ddc-4a8d58b2ec29",
+          "name": "Tree of Perdition",
+          "scryfall_uri": "https://scryfall.com/card/j22/75/tree-of-perdition",
+          "mana_cost": "{3}{B}",
+          "type_line": "Creature — Plant",
+          "collector_number": "75",
+          "set": "j22",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/9/d/9d4aef6f-10f8-4376-8518-a3165d0df062.jpg?1675645215"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "d4330259-7a4c-4927-b042-dd3d6160d3dc",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 370.01,
+        "count": 1,
+        "raw_text": "1 Y'shtola, Night's Blessed",
+        "found": true,
+        "printing_specified": true,
+        "finish": "foil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "58cca3dc-eac8-4ef6-a2c0-d46d9240d06b",
+          "oracle_id": "3268251a-8292-44f9-9267-c961b182f739",
+          "name": "Y'shtola, Night's Blessed",
+          "scryfall_uri": "https://scryfall.com/card/fic/215/yshtola-nights-blessed",
+          "mana_cost": "{1}{W}{U}{B}",
+          "type_line": "Legendary Creature — Cat Warlock",
+          "collector_number": "215",
+          "set": "fic",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/5/8/58cca3dc-eac8-4ef6-a2c0-d46d9240d06b.jpg?1748704976"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "a982a344-90c8-4f16-8fb3-20bc2c6e132b",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 371.01,
+        "count": 1,
+        "raw_text": "1 Yuna, Grand Summoner",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "e562a30c-038e-44bb-ae07-0c3d0e8a1393",
+          "oracle_id": "ba72d4a9-6f36-4796-bd71-2342fa9b4a30",
+          "name": "Yuna, Grand Summoner",
+          "scryfall_uri": "https://scryfall.com/card/fic/208/yuna-grand-summoner",
+          "mana_cost": "{1}{G}{W}{U}",
+          "type_line": "Legendary Creature — Human Cleric",
+          "collector_number": "208",
+          "set": "fic",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/e/5/e562a30c-038e-44bb-ae07-0c3d0e8a1393.jpg?1748704952"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "db3a02cf-76f3-420c-8136-c53815787077",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 372.01,
+        "count": 1,
+        "raw_text": "1 Yuna, Hope of Spira",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "8f861d59-f2ce-457f-99f4-48b12ae34fa2",
+          "oracle_id": "3dee768a-612c-4960-bad2-2fe5b83a70c3",
+          "name": "Yuna, Hope of Spira",
+          "scryfall_uri": "https://scryfall.com/card/fin/404/yuna-hope-of-spira",
+          "mana_cost": "{3}{G}{W}",
+          "type_line": "Legendary Creature — Human Cleric",
+          "collector_number": "404",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/8/f/8f861d59-f2ce-457f-99f4-48b12ae34fa2.jpg?1748707363"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "e4e7d969-4970-47b9-a22a-695f80224d15",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 373.01,
+        "count": 1,
+        "raw_text": "1 Zidane, Tantalus Thief",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "8dca28e1-21f1-4ed7-b294-df2e0c5c9503",
+          "oracle_id": "f267fb54-1881-464c-81af-9e03c3f3b41d",
+          "name": "Zidane, Tantalus Thief",
+          "scryfall_uri": "https://scryfall.com/card/fin/405/zidane-tantalus-thief",
+          "mana_cost": "{3}{R}{W}",
+          "type_line": "Legendary Creature — Human Mutant Scout",
+          "collector_number": "405",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/8/d/8dca28e1-21f1-4ed7-b294-df2e0c5c9503.jpg?1748707369"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "829b4f9f-7b0f-46eb-a9df-df87e90ab4f7",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 374.01,
+        "count": 1,
+        "raw_text": "1 The Darkness Crystal",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "0f93b6ac-54ce-45d0-8549-19307406e6e5",
+          "oracle_id": "660f370a-b25b-4ea5-b765-7abf96899c1c",
+          "name": "The Darkness Crystal",
+          "scryfall_uri": "https://scryfall.com/card/fin/96/the-darkness-crystal",
+          "mana_cost": "{2}{B}{B}",
+          "type_line": "Legendary Artifact",
+          "collector_number": "96",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/0/f/0f93b6ac-54ce-45d0-8549-19307406e6e5.jpg?1748706123"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "46c4a401-1bc4-47df-99d9-4359de950121",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 375.01,
+        "count": 1,
+        "raw_text": "1 Overkill",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "ae075e71-d33d-4d6c-b4a5-0b47dd6fd196",
+          "oracle_id": "571cb4b6-b4e5-40a2-a970-42c1ab65c8a9",
+          "name": "Overkill",
+          "scryfall_uri": "https://scryfall.com/card/fin/109/overkill",
+          "mana_cost": "{2}{B}",
+          "type_line": "Instant",
+          "collector_number": "109",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/a/e/ae075e71-d33d-4d6c-b4a5-0b47dd6fd196.jpg?1748706172"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "63ba668c-7998-48ae-9840-0ab163a478f4",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 376.01,
+        "count": 1,
+        "raw_text": "1 Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "85eaf5e7-77dc-4842-a70c-ce4ac7f724df",
+          "oracle_id": "70113003-be5e-406a-9aec-cb480468c36d",
+          "name": "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel",
+          "scryfall_uri": "https://scryfall.com/card/fin/115/sephiroth-fabled-soldier-sephiroth-one-winged-angel",
+          "mana_cost": "{2}{B}",
+          "type_line": "Legendary Creature — Human Avatar Soldier // Legendary Creature — Angel Nightmare Avatar",
+          "collector_number": "115",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/8/5/85eaf5e7-77dc-4842-a70c-ce4ac7f724df.jpg?1748707811",
+            "back": "https://cards.scryfall.io/large/back/8/5/85eaf5e7-77dc-4842-a70c-ce4ac7f724df.jpg?1748707811"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "f122790d-e3dd-416d-b619-23c1dca5e9b0",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 377.01,
+        "count": 1,
+        "raw_text": "1 The Wind Crystal",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "19bd0885-baaa-40f2-9c59-b1ea53807540",
+          "oracle_id": "240f0835-36af-4ad8-9336-d6d3d816d293",
+          "name": "The Wind Crystal",
+          "scryfall_uri": "https://scryfall.com/card/fin/43/the-wind-crystal",
+          "mana_cost": "{2}{W}{W}",
+          "type_line": "Legendary Artifact",
+          "collector_number": "43",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/1/9/19bd0885-baaa-40f2-9c59-b1ea53807540.jpg?1748705917"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "e61df8ab-2b89-49b6-b939-515a954e3342",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 378.01,
+        "count": 1,
+        "raw_text": "1 The Earth Crystal",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "d585e218-3dc8-4fbd-8ad2-795fbc9b2155",
+          "oracle_id": "5e7ef7fe-968b-4ada-9fe4-6fda0541aafc",
+          "name": "The Earth Crystal",
+          "scryfall_uri": "https://scryfall.com/card/fin/184/the-earth-crystal",
+          "mana_cost": "{2}{G}{G}",
+          "type_line": "Legendary Artifact",
+          "collector_number": "184",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/d/5/d585e218-3dc8-4fbd-8ad2-795fbc9b2155.jpg?1748706448"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "e7b8b3b3-b804-451d-af51-e9c00c10769e",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 379.01,
+        "count": 1,
+        "raw_text": "1 Jumbo Cactuar",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "db01c222-8795-47e9-a789-e7f749a3ee7d",
+          "oracle_id": "e0bdfbb4-3060-4492-bd9b-0c47e719400a",
+          "name": "Jumbo Cactuar",
+          "scryfall_uri": "https://scryfall.com/card/fin/191/jumbo-cactuar",
+          "mana_cost": "{5}{G}{G}",
+          "type_line": "Creature — Plant",
+          "collector_number": "191",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/d/b/db01c222-8795-47e9-a789-e7f749a3ee7d.jpg?1748706475"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "cf3b6b74-ccd0-42e8-a1b4-2b44163ced05",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 380.01,
+        "count": 1,
+        "raw_text": "1 Tifa Lockhart",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "fb781323-2746-405d-a9b2-e778c037a6e9",
+          "oracle_id": "878df304-9d6d-4ce9-b65b-1439c251f3e0",
+          "name": "Tifa Lockhart",
+          "scryfall_uri": "https://scryfall.com/card/fin/206/tifa-lockhart",
+          "mana_cost": "{1}{G}",
+          "type_line": "Legendary Creature — Human Monk",
+          "collector_number": "206",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/f/b/fb781323-2746-405d-a9b2-e778c037a6e9.jpg?1748706535"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "09c7bf5c-31c0-40d4-90fc-92d42ce4ea0b",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 381.01,
+        "count": 1,
+        "raw_text": "1 Rinoa Heartilly",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "ba79d293-bf42-48b6-a868-5249f4beeb76",
+          "oracle_id": "8896c74b-d466-4c25-94cf-82b5e2b1fdef",
+          "name": "Rinoa Heartilly",
+          "scryfall_uri": "https://scryfall.com/card/fin/237/rinoa-heartilly",
+          "mana_cost": "{3}{G}{W}",
+          "type_line": "Legendary Creature — Human Rebel Warlock",
+          "collector_number": "237",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/b/a/ba79d293-bf42-48b6-a868-5249f4beeb76.jpg?1748706666"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "eb6347c2-7372-48e5-8927-728a9e5abb70",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 382.01,
+        "count": 1,
+        "raw_text": "1 Squall, SeeD Mercenary",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "cc4e5234-fb41-48f7-91f4-039710542bc3",
+          "oracle_id": "e2348e0e-eeca-47b5-9417-bf4470ec29bb",
+          "name": "Squall, SeeD Mercenary",
+          "scryfall_uri": "https://scryfall.com/card/fin/243/squall-seed-mercenary",
+          "mana_cost": "{2}{W}{B}",
+          "type_line": "Legendary Creature — Human Knight Mercenary",
+          "collector_number": "243",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/c/c/cc4e5234-fb41-48f7-91f4-039710542bc3.jpg?1748706690"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "7b94348a-f801-4c05-8efe-69ea1e99ffc2",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 383.01,
+        "count": 1,
+        "raw_text": "1 Vivi Ornitier",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "ecc1027a-8c07-44a0-bdde-fa2844cff694",
+          "oracle_id": "0452be2a-e97a-4269-a9e3-b616265ecb2e",
+          "name": "Vivi Ornitier",
+          "scryfall_uri": "https://scryfall.com/card/fin/248/vivi-ornitier",
+          "mana_cost": "{1}{U}{R}",
+          "type_line": "Legendary Creature — Wizard",
+          "collector_number": "248",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/e/c/ecc1027a-8c07-44a0-bdde-fa2844cff694.jpg?1762773080"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "695b15c0-b31a-4c81-9042-6d8a762a92aa",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 384.01,
+        "count": 1,
+        "raw_text": "1 Zidane, Tantalus Thief",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "e42c7d9d-8685-415b-8c5d-6ab2165863b9",
+          "oracle_id": "f267fb54-1881-464c-81af-9e03c3f3b41d",
+          "name": "Zidane, Tantalus Thief",
+          "scryfall_uri": "https://scryfall.com/card/fin/251/zidane-tantalus-thief",
+          "mana_cost": "{3}{R}{W}",
+          "type_line": "Legendary Creature — Human Mutant Scout",
+          "collector_number": "251",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/e/4/e42c7d9d-8685-415b-8c5d-6ab2165863b9.jpg?1748706732"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "05397c36-b547-4aa0-8731-c5beb0e56d43",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 385.01,
+        "count": 1,
+        "raw_text": "1 Plains",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "e623b058-76d2-476b-9ee6-82807f7992c3",
+          "oracle_id": "bc71ebf6-2056-41f7-be35-b2e5c34afa99",
+          "name": "Plains",
+          "scryfall_uri": "https://scryfall.com/card/fin/295/plains",
+          "mana_cost": "",
+          "type_line": "Basic Land — Plains",
+          "collector_number": "295",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/e/6/e623b058-76d2-476b-9ee6-82807f7992c3.jpg?1748706882"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "226a1475-a72c-4145-85fe-40aa75cb0b94",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 386.01,
+        "count": 1,
+        "raw_text": "1 Midgar, City of Mako // Reactor Raid",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "fa605930-a7f0-410d-ac58-f5f0bd8caadf",
+          "oracle_id": "4e34a49d-f031-48ac-a458-97b79124b76c",
+          "name": "Midgar, City of Mako // Reactor Raid",
+          "scryfall_uri": "https://scryfall.com/card/fin/313/midgar-city-of-mako-reactor-raid",
+          "mana_cost": "{2}{B}",
+          "type_line": "Land — Town // Sorcery — Adventure",
+          "collector_number": "313",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/f/a/fa605930-a7f0-410d-ac58-f5f0bd8caadf.jpg?1748706949"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "373bc495-622e-4515-934a-7f6076acd691",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 387.01,
+        "count": 1,
+        "raw_text": "1 Vivi Ornitier",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "ada6aeb6-8c9f-4498-9326-b4da0fcb19a3",
+          "oracle_id": "0452be2a-e97a-4269-a9e3-b616265ecb2e",
+          "name": "Vivi Ornitier",
+          "scryfall_uri": "https://scryfall.com/card/fin/321/vivi-ornitier",
+          "mana_cost": "{1}{U}{R}",
+          "type_line": "Legendary Creature — Wizard",
+          "collector_number": "321",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/a/d/ada6aeb6-8c9f-4498-9326-b4da0fcb19a3.jpg?1750668593"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "50ec80d2-7572-4457-ae6c-c58d613df189",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 388.01,
+        "count": 1,
+        "raw_text": "1 Memories Returning",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "fb3c836d-8012-4591-ba4f-e6db6d59b974",
+          "oracle_id": "6cdc6548-cb32-437f-850a-9002542ad3d5",
+          "name": "Memories Returning",
+          "scryfall_uri": "https://scryfall.com/card/fin/331/memories-returning",
+          "mana_cost": "{2}{U}{U}",
+          "type_line": "Sorcery",
+          "collector_number": "331",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/f/b/fb3c836d-8012-4591-ba4f-e6db6d59b974.jpg?1748707037"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "10f2e82d-4483-4e21-ba33-62fc7f38e6a4",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 389.01,
+        "count": 1,
+        "raw_text": "1 The Wind Crystal",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "423134fa-62d9-439c-b123-eeea52f42414",
+          "oracle_id": "240f0835-36af-4ad8-9336-d6d3d816d293",
+          "name": "The Wind Crystal",
+          "scryfall_uri": "https://scryfall.com/card/fin/330/the-wind-crystal",
+          "mana_cost": "{2}{W}{W}",
+          "type_line": "Legendary Artifact",
+          "collector_number": "330",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/2/423134fa-62d9-439c-b123-eeea52f42414.jpg?1748707030"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "3b73f2e8-2f53-4962-a6b0-321496a2882c",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 390.01,
+        "count": 1,
+        "raw_text": "1 The Water Crystal",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "7572888a-c394-4d9f-b66f-30d91364d265",
+          "oracle_id": "f8d2a94f-7be1-4b17-8556-398dde531360",
+          "name": "The Water Crystal",
+          "scryfall_uri": "https://scryfall.com/card/fin/333/the-water-crystal",
+          "mana_cost": "{2}{U}{U}",
+          "type_line": "Legendary Artifact",
+          "collector_number": "333",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/7/5/7572888a-c394-4d9f-b66f-30d91364d265.jpg?1748707045"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "bfcc1191-e4b4-432e-9119-d5cd0ee03e1c",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 391.01,
+        "count": 1,
+        "raw_text": "1 The Fire Crystal",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "58306c68-5de8-48f4-9ce5-ea69792af58c",
+          "oracle_id": "57276db8-9d8d-4587-ae88-dfdc44343f17",
+          "name": "The Fire Crystal",
+          "scryfall_uri": "https://scryfall.com/card/fin/337/the-fire-crystal",
+          "mana_cost": "{2}{R}{R}",
+          "type_line": "Legendary Artifact",
+          "collector_number": "337",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/5/8/58306c68-5de8-48f4-9ce5-ea69792af58c.jpg?1748707060"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "a39ea630-877a-4c8c-b033-6d1236dabd43",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 392.01,
+        "count": 1,
+        "raw_text": "1 The Darkness Crystal",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "749f2041-0eb5-42c3-b9ac-05a7575cb693",
+          "oracle_id": "660f370a-b25b-4ea5-b765-7abf96899c1c",
+          "name": "The Darkness Crystal",
+          "scryfall_uri": "https://scryfall.com/card/fin/335/the-darkness-crystal",
+          "mana_cost": "{2}{B}{B}",
+          "type_line": "Legendary Artifact",
+          "collector_number": "335",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/7/4/749f2041-0eb5-42c3-b9ac-05a7575cb693.jpg?1748707052"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "3ee33311-5013-4a0b-ac23-8036800309c8",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 393.01,
+        "count": 1,
+        "raw_text": "1 The Earth Crystal",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "9240303a-73a3-4daf-b5fc-090ce7cbd92a",
+          "oracle_id": "5e7ef7fe-968b-4ada-9fe4-6fda0541aafc",
+          "name": "The Earth Crystal",
+          "scryfall_uri": "https://scryfall.com/card/fin/342/the-earth-crystal",
+          "mana_cost": "{2}{G}{G}",
+          "type_line": "Legendary Artifact",
+          "collector_number": "342",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/9/2/9240303a-73a3-4daf-b5fc-090ce7cbd92a.jpg?1748707074"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "18e76b98-e085-4ee0-8351-7da458efc1ae",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 394.01,
+        "count": 1,
+        "raw_text": "1 Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "f150d6e9-3da6-4655-9c63-dd34525d08a1",
+          "oracle_id": "70113003-be5e-406a-9aec-cb480468c36d",
+          "name": "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel",
+          "scryfall_uri": "https://scryfall.com/card/fin/382/sephiroth-fabled-soldier-sephiroth-one-winged-angel",
+          "mana_cost": "{2}{B}",
+          "type_line": "Legendary Creature — Human Avatar Soldier // Legendary Creature — Angel Nightmare Avatar",
+          "collector_number": "382",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/f/1/f150d6e9-3da6-4655-9c63-dd34525d08a1.jpg?1748707859",
+            "back": "https://cards.scryfall.io/large/back/f/1/f150d6e9-3da6-4655-9c63-dd34525d08a1.jpg?1748707859"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "91733e2d-ea88-4124-9688-682a0aa2f194",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 395.01,
+        "count": 1,
+        "raw_text": "1 Squall, SeeD Mercenary",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "883c6111-c921-4cd6-930d-4fa335ef2871",
+          "oracle_id": "e2348e0e-eeca-47b5-9417-bf4470ec29bb",
+          "name": "Squall, SeeD Mercenary",
+          "scryfall_uri": "https://scryfall.com/card/fin/402/squall-seed-mercenary",
+          "mana_cost": "{2}{W}{B}",
+          "type_line": "Legendary Creature — Human Knight Mercenary",
+          "collector_number": "402",
+          "set": "fin",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/8/8/883c6111-c921-4cd6-930d-4fa335ef2871.jpg?1748707357"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "b350b04d-e324-442b-83be-3b873835697c",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 396.01,
+        "count": 1,
+        "raw_text": "1 Jungle Hollow",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "ea13440b-3f7b-4182-9541-27c1fa3121e5",
+          "oracle_id": "6de714e1-446d-4fb9-9e3d-bcd3ec6af9ca",
+          "name": "Jungle Hollow",
+          "scryfall_uri": "https://scryfall.com/card/tdm/258/jungle-hollow",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "258",
+          "set": "tdm",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/e/a/ea13440b-3f7b-4182-9541-27c1fa3121e5.jpg?1743205019"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "ec8827a0-89d6-4232-a110-75b306dc835e",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 397.01,
+        "count": 1,
+        "raw_text": "1 Cursecloth Wrappings",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "d5803b32-4a81-46c2-9b10-3198a709611d",
+          "oracle_id": "d9c4996a-35eb-4d38-9680-57d9d039ed82",
+          "name": "Cursecloth Wrappings",
+          "scryfall_uri": "https://scryfall.com/card/dft/81/cursecloth-wrappings",
+          "mana_cost": "{2}{B}{B}",
+          "type_line": "Artifact",
+          "collector_number": "81",
+          "set": "dft",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/d/5/d5803b32-4a81-46c2-9b10-3198a709611d.jpg?1738356300"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "a97d4d49-804e-4948-99be-6d2b1aaf6710",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 398.01,
+        "count": 1,
+        "raw_text": "1 Engine Rat",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "949d6137-98d3-4f46-ab1e-08d7492af307",
+          "oracle_id": "7e29aae9-815a-4999-ace6-7bc860acde32",
+          "name": "Engine Rat",
+          "scryfall_uri": "https://scryfall.com/card/dft/84/engine-rat",
+          "mana_cost": "{B}",
+          "type_line": "Creature — Zombie Rat",
+          "collector_number": "84",
+          "set": "dft",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/9/4/949d6137-98d3-4f46-ab1e-08d7492af307.jpg?1738356304"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "5f796db7-f948-42b2-a1cc-fde89bdc0386",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 399.01,
+        "count": 1,
+        "raw_text": "1 Unstoppable Slasher",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "c78da035-6b5b-4136-9ab6-f622b64fdc54",
+          "oracle_id": "6662968e-ca9e-454c-be44-24ad10e43d3e",
+          "name": "Unstoppable Slasher",
+          "scryfall_uri": "https://scryfall.com/card/dsk/119/unstoppable-slasher",
+          "mana_cost": "{2}{B}",
+          "type_line": "Creature — Zombie Assassin",
+          "collector_number": "119",
+          "set": "dsk",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/c/7/c78da035-6b5b-4136-9ab6-f622b64fdc54.jpg?1726286292"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "21802d0d-a056-4808-a0f1-d4b4d640345b",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 400.01,
+        "count": 1,
+        "raw_text": "1 Sinister Monolith",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "2a15e06c-2608-4e7a-a16c-d35417669d86",
+          "oracle_id": "ae8003eb-9f19-4f23-be3b-0ac3ddc03a72",
+          "name": "Sinister Monolith",
+          "scryfall_uri": "https://scryfall.com/card/blb/113/sinister-monolith",
+          "mana_cost": "{3}{B}",
+          "type_line": "Artifact",
+          "collector_number": "113",
+          "set": "blb",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/2/a/2a15e06c-2608-4e7a-a16c-d35417669d86.jpg?1721426512"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "96f09505-a65c-4531-b9ef-c87c259d7c3e",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 401.01,
+        "count": 1,
+        "raw_text": "1 Tarrian's Journal // The Tomb of Aclazotz",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "99255a66-b868-45fc-a2a9-0c89bd851b69",
+          "oracle_id": "a75b02ba-b0c8-47e3-a05c-e9ba221a7578",
+          "name": "Tarrian's Journal // The Tomb of Aclazotz",
+          "scryfall_uri": "https://scryfall.com/card/lci/126/tarrians-journal-the-tomb-of-aclazotz",
+          "mana_cost": "{1}{B}",
+          "type_line": "Legendary Artifact // Legendary Land — Cave",
+          "collector_number": "126",
+          "set": "lci",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/9/9/99255a66-b868-45fc-a2a9-0c89bd851b69.jpg?1699044198",
+            "back": "https://cards.scryfall.io/large/back/9/9/99255a66-b868-45fc-a2a9-0c89bd851b69.jpg?1699044198"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "2a8c5248-06b3-40d3-90fd-7d741b15f293",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 402.01,
+        "count": 1,
+        "raw_text": "1 Gravecrawler",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "6987d609-ba0f-42bf-9b61-bdfb943c03b5",
+          "oracle_id": "09ff28b1-b6c9-48e6-b12e-2f0e644f709f",
+          "name": "Gravecrawler",
+          "scryfall_uri": "https://scryfall.com/card/tdc/93/gravecrawler",
+          "mana_cost": "{B}",
+          "type_line": "Creature — Zombie",
+          "collector_number": "93",
+          "set": "tdc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/6/9/6987d609-ba0f-42bf-9b61-bdfb943c03b5.jpg?1743206046"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "e2a6105a-ceb0-4c11-afb9-b52ecc0b213e",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 403.01,
+        "count": 1,
+        "raw_text": "1 Lost Monarch of Ifnir",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "cae37ab0-9d60-45e9-98cb-e7427e508bc5",
+          "oracle_id": "626a979f-bed7-4cb1-9ab7-c3f2bbe37781",
+          "name": "Lost Monarch of Ifnir",
+          "scryfall_uri": "https://scryfall.com/card/drc/11/lost-monarch-of-ifnir",
+          "mana_cost": "{3}{B}",
+          "type_line": "Creature — Zombie Noble",
+          "collector_number": "11",
+          "set": "drc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/c/a/cae37ab0-9d60-45e9-98cb-e7427e508bc5.jpg?1738355332"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "420467c6-342d-49b6-832c-afa283ae6cea",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 404.01,
+        "count": 2,
+        "raw_text": "2 Ghoulcaller Gisa",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "44d7906e-8a89-4644-acb5-46fbe97ab39f",
+          "oracle_id": "0dd894cb-1968-471c-af08-ea7ec5ce8428",
+          "name": "Ghoulcaller Gisa",
+          "scryfall_uri": "https://scryfall.com/card/cmm/161/ghoulcaller-gisa",
+          "mana_cost": "{3}{B}{B}",
+          "type_line": "Legendary Creature — Human Wizard",
+          "collector_number": "161",
+          "set": "cmm",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/4/44d7906e-8a89-4644-acb5-46fbe97ab39f.jpg?1689997183"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "d1ccc299-ab8a-4042-8cd8-4bf4105e2b6d",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 405.01,
+        "count": 1,
+        "raw_text": "1 Open the Graves",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "130978d1-0b20-4dfa-85f5-3ff2bc2cfda3",
+          "oracle_id": "28778958-a1f9-4fea-b551-c193d1257f18",
+          "name": "Open the Graves",
+          "scryfall_uri": "https://scryfall.com/card/mic/126/open-the-graves",
+          "mana_cost": "{3}{B}{B}",
+          "type_line": "Enchantment",
+          "collector_number": "126",
+          "set": "mic",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/1/3/130978d1-0b20-4dfa-85f5-3ff2bc2cfda3.jpg?1637630703"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "5d99bfa9-4142-4a51-8f9b-f7de902b312e",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 406.01,
+        "count": 1,
+        "raw_text": "1 Jadar, Ghoulcaller of Nephalia",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "ff971ba7-68b8-482a-9cb1-741f6893550c",
+          "oracle_id": "fb3defc0-c93a-4423-9ff9-c399f8a8ef1f",
+          "name": "Jadar, Ghoulcaller of Nephalia",
+          "scryfall_uri": "https://scryfall.com/card/mid/108/jadar-ghoulcaller-of-nephalia",
+          "mana_cost": "{1}{B}",
+          "type_line": "Legendary Creature — Human Wizard",
+          "collector_number": "108",
+          "set": "mid",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/f/f/ff971ba7-68b8-482a-9cb1-741f6893550c.jpg?1634349933"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "bf30d6ce-6c92-4e0c-a026-560be893cc72",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 407.01,
+        "count": 1,
+        "raw_text": "1 Champion of the Perished",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "8d8e6941-ad6e-4d2f-93c0-be79e75bdf06",
+          "oracle_id": "f3654fbd-16a5-4953-84ac-534e8421032f",
+          "name": "Champion of the Perished",
+          "scryfall_uri": "https://scryfall.com/card/mid/91/champion-of-the-perished",
+          "mana_cost": "{B}",
+          "type_line": "Creature — Zombie",
+          "collector_number": "91",
+          "set": "mid",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/8/d/8d8e6941-ad6e-4d2f-93c0-be79e75bdf06.jpg?1634349628"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "1c4e3f2f-050f-4de1-9fc4-3da924769126",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 408.01,
+        "count": 1,
+        "raw_text": "1 Wand of Orcus",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "510af4b7-289a-4de7-9a22-00fe1e8aaabf",
+          "oracle_id": "9fd521d5-baa3-4054-a990-d23265863c71",
+          "name": "Wand of Orcus",
+          "scryfall_uri": "https://scryfall.com/card/afc/28/wand-of-orcus",
+          "mana_cost": "{2}{B}",
+          "type_line": "Legendary Artifact — Equipment",
+          "collector_number": "28",
+          "set": "afc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/5/1/510af4b7-289a-4de7-9a22-00fe1e8aaabf.jpg?1631585136"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "6eb542e1-d567-4ed2-bbb7-17b606789ba6",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 409.01,
+        "count": 1,
+        "raw_text": "1 Graf Harvest",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "fbc17697-9db9-41d4-aacf-b2f2e6ff80cf",
+          "oracle_id": "d3ba6922-c2f7-45ab-87a3-d4bbd770d1ba",
+          "name": "Graf Harvest",
+          "scryfall_uri": "https://scryfall.com/card/emn/90/graf-harvest",
+          "mana_cost": "{B}",
+          "type_line": "Enchantment",
+          "collector_number": "90",
+          "set": "emn",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/f/b/fbc17697-9db9-41d4-aacf-b2f2e6ff80cf.jpg?1576384322"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "bf5088fc-3cbb-4fc7-8333-81d579a00476",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 410.01,
+        "count": 1,
+        "raw_text": "1 Shamble Back",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "f6913dce-05f5-4e1b-9dd9-67eb347b5be8",
+          "oracle_id": "11a20648-fdb6-4f52-8fda-c66985e0c044",
+          "name": "Shamble Back",
+          "scryfall_uri": "https://scryfall.com/card/soi/134/shamble-back",
+          "mana_cost": "{B}",
+          "type_line": "Sorcery",
+          "collector_number": "134",
+          "set": "soi",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/f/6/f6913dce-05f5-4e1b-9dd9-67eb347b5be8.jpg?1576384582"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "749de82b-4f34-41e7-a4e8-43e369399b05",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 411.01,
+        "count": 1,
+        "raw_text": "1 Unbreathing Horde",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "dd119aa8-8414-4942-9a28-3e68a9a52a8e",
+          "oracle_id": "e6cd9203-e4d3-4d9f-b59f-4e454fc5a477",
+          "name": "Unbreathing Horde",
+          "scryfall_uri": "https://scryfall.com/card/ddq/66/unbreathing-horde",
+          "mana_cost": "{2}{B}",
+          "type_line": "Creature — Zombie",
+          "collector_number": "66",
+          "set": "ddq",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/d/d/dd119aa8-8414-4942-9a28-3e68a9a52a8e.jpg?1592763342"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "a0ea80ac-3857-4ac2-9c1b-34c3b3a65fff",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 412.01,
+        "count": 1,
+        "raw_text": "1 Curse of Shallow Graves",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "849996e2-fb62-428f-88f1-4ac419617395",
+          "oracle_id": "dc66dbed-f979-4ad1-b5f9-08538886167f",
+          "name": "Curse of Shallow Graves",
+          "scryfall_uri": "https://scryfall.com/card/c13/71/curse-of-shallow-graves",
+          "mana_cost": "{2}{B}",
+          "type_line": "Enchantment — Aura Curse",
+          "collector_number": "71",
+          "set": "c13",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/8/4/849996e2-fb62-428f-88f1-4ac419617395.jpg?1562922975"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "713478bf-78cf-4905-91d3-7791e350a4cc",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 413.01,
+        "count": 1,
+        "raw_text": "1 Grave Betrayal",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "47b38c68-8e72-4afc-bb5e-0b40880fdda9",
+          "oracle_id": "892c8fd1-9553-4ced-84ec-9fc35c314c76",
+          "name": "Grave Betrayal",
+          "scryfall_uri": "https://scryfall.com/card/rtr/67/grave-betrayal",
+          "mana_cost": "{5}{B}{B}",
+          "type_line": "Enchantment",
+          "collector_number": "67",
+          "set": "rtr",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/7/47b38c68-8e72-4afc-bb5e-0b40880fdda9.jpg?1562785660"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "b0ab7bcb-d60e-4f9c-ac73-49eb855915d5",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 414.01,
+        "count": 2,
+        "raw_text": "2 Diregraf Captain",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "158407ad-35a9-40e1-9762-1c0572b56ecb",
+          "oracle_id": "70de24d9-c585-4bf6-ac2c-c5b4b7aa298c",
+          "name": "Diregraf Captain",
+          "scryfall_uri": "https://scryfall.com/card/mic/148/diregraf-captain",
+          "mana_cost": "{1}{U}{B}",
+          "type_line": "Creature — Zombie Soldier",
+          "collector_number": "148",
+          "set": "mic",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/1/5/158407ad-35a9-40e1-9762-1c0572b56ecb.jpg?1637631384"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "847abd58-46d0-4665-b0a6-0860814cd106",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 415.01,
+        "count": 1,
+        "raw_text": "1 Empty the Laboratory",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "191f6693-32d9-448d-8889-f98cf13c2277",
+          "oracle_id": "84f3736f-5b2a-40f9-8c3b-c18f8c637c22",
+          "name": "Empty the Laboratory",
+          "scryfall_uri": "https://scryfall.com/card/mic/14/empty-the-laboratory",
+          "mana_cost": "{X}{U}{U}",
+          "type_line": "Sorcery",
+          "collector_number": "14",
+          "set": "mic",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/1/9/191f6693-32d9-448d-8889-f98cf13c2277.jpg?1637628102"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "59ed07c1-3de8-4cd9-8dbf-ff815b1dd516",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 416.01,
+        "count": 2,
+        "raw_text": "2 Geralf, Visionary Stitcher",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "69890076-9cc4-434f-8618-63b00fdf4515",
+          "oracle_id": "0a0743b0-07c2-4e11-8b30-6b1b8156bdd0",
+          "name": "Geralf, Visionary Stitcher",
+          "scryfall_uri": "https://scryfall.com/card/vow/61/geralf-visionary-stitcher",
+          "mana_cost": "{2}{U}",
+          "type_line": "Legendary Creature — Human Wizard",
+          "collector_number": "61",
+          "set": "vow",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/6/9/69890076-9cc4-434f-8618-63b00fdf4515.jpg?1643587870"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "6002f14c-2b0e-47c1-a0a3-e390ee2e87a4",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 417.01,
+        "count": 1,
+        "raw_text": "1 Jason Bright, Glowing Prophet",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "48313997-fd94-486a-bf30-e9143a155814",
+          "oracle_id": "5c4f1f94-9916-49aa-956a-c1c6b299b24f",
+          "name": "Jason Bright, Glowing Prophet",
+          "scryfall_uri": "https://scryfall.com/card/pip/32/jason-bright-glowing-prophet",
+          "mana_cost": "{2}{U}",
+          "type_line": "Legendary Creature — Zombie Mutant Advisor",
+          "collector_number": "32",
+          "set": "pip",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/8/48313997-fd94-486a-bf30-e9143a155814.jpg?1708741922"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "5224f3d0-2ec2-40a3-a50a-9b3c7a58783a",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 418.01,
+        "count": 2,
+        "raw_text": "2 Lich Lord of Unx",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "df38c422-7830-4f25-b74b-ed90b7047f53",
+          "oracle_id": "6643fc8e-548e-48db-9f67-ffbca9e57016",
+          "name": "Lich Lord of Unx",
+          "scryfall_uri": "https://scryfall.com/card/arb/24/lich-lord-of-unx",
+          "mana_cost": "{1}{U}{B}",
+          "type_line": "Creature — Zombie Wizard",
+          "collector_number": "24",
+          "set": "arb",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/d/f/df38c422-7830-4f25-b74b-ed90b7047f53.jpg?1562644645"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "6520b866-e974-447c-939e-d9ec288cb0c0",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 419.01,
+        "count": 2,
+        "raw_text": "2 Necroduality",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "6385509a-6814-4039-83fb-1fa5a7439696",
+          "oracle_id": "d36acdfe-2b1b-4c19-8b81-0b3127e480fe",
+          "name": "Necroduality",
+          "scryfall_uri": "https://scryfall.com/card/inr/79/necroduality",
+          "mana_cost": "{3}{U}",
+          "type_line": "Enchantment",
+          "collector_number": "79",
+          "set": "inr",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/6/3/6385509a-6814-4039-83fb-1fa5a7439696.jpg?1736467797"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "05a2b070-576d-4e27-8abe-f1511cdb9f09",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 420.01,
+        "count": 2,
+        "raw_text": "2 Rooftop Storm",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "31146f03-cb5e-4f33-aad7-ce970b914d90",
+          "oracle_id": "6835bf6d-7197-481b-ac26-276ce363b4ad",
+          "name": "Rooftop Storm",
+          "scryfall_uri": "https://scryfall.com/card/inr/83/rooftop-storm",
+          "mana_cost": "{5}{U}",
+          "type_line": "Enchantment",
+          "collector_number": "83",
+          "set": "inr",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/3/1/31146f03-cb5e-4f33-aad7-ce970b914d90.jpg?1736467814"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "71793410-1d3b-4008-a633-b56ec434e7d1",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 421.01,
+        "count": 1,
+        "raw_text": "1 The Scarab God",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "f4f414ef-84a2-4694-9e98-51bee4576c84",
+          "oracle_id": "c75e55f2-fd6c-4816-9d96-21eeb8369aff",
+          "name": "The Scarab God",
+          "scryfall_uri": "https://scryfall.com/card/cmm/353/the-scarab-god",
+          "mana_cost": "{3}{U}{B}",
+          "type_line": "Legendary Creature — God",
+          "collector_number": "353",
+          "set": "cmm",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/f/4/f4f414ef-84a2-4694-9e98-51bee4576c84.jpg?1689999233"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "3f746295-d648-438d-b298-55b0f4c3bda7",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 422.01,
+        "count": 1,
+        "raw_text": "1 Undead Alchemist",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "b7231a1c-f3aa-4346-9eb1-63e35ab3001c",
+          "oracle_id": "3807e6fe-0555-4b09-aef2-efd58abaf669",
+          "name": "Undead Alchemist",
+          "scryfall_uri": "https://scryfall.com/card/mic/105/undead-alchemist",
+          "mana_cost": "{3}{U}",
+          "type_line": "Creature — Zombie",
+          "collector_number": "105",
+          "set": "mic",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/b/7/b7231a1c-f3aa-4346-9eb1-63e35ab3001c.jpg?1637629825"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "e051e663-3e70-4a88-a475-e3c984624600",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 423.01,
+        "count": 1,
+        "raw_text": "1 Dismal Backwater",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "082b52c9-c46e-44d3-b723-546ba528e07b",
+          "oracle_id": "865a2194-fca0-446e-aae3-ca475cd66e00",
+          "name": "Dismal Backwater",
+          "scryfall_uri": "https://scryfall.com/card/tdm/254/dismal-backwater",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "254",
+          "set": "tdm",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/0/8/082b52c9-c46e-44d3-b723-546ba528e07b.jpg?1743697562"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "cdec49d0-0a99-49a7-a3e1-c562a7ec2226",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 424.01,
+        "count": 1,
+        "raw_text": "1 Darkslick Shores",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "c49305d1-ac95-43ea-b02d-c3c7205bcda6",
+          "oracle_id": "a2b48695-f7d7-42ce-a8a0-2a723428542a",
+          "name": "Darkslick Shores",
+          "scryfall_uri": "https://scryfall.com/card/otc/281/darkslick-shores",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "281",
+          "set": "otc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/c/4/c49305d1-ac95-43ea-b02d-c3c7205bcda6.jpg?1712354960"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "7c795284-cee1-4458-aae7-b2f1eb8770ea",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 425.01,
+        "count": 1,
+        "raw_text": "1 Undercity Sewers",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "2b5801fb-2026-4f25-98bc-ebb2f99684b9",
+          "oracle_id": "08d80efc-9542-4ba2-824c-c8615d8d07f2",
+          "name": "Undercity Sewers",
+          "scryfall_uri": "https://scryfall.com/card/mkm/270/undercity-sewers",
+          "mana_cost": "",
+          "type_line": "Land — Island Swamp",
+          "collector_number": "270",
+          "set": "mkm",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/2/b/2b5801fb-2026-4f25-98bc-ebb2f99684b9.jpg?1759236533"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "69e31865-4d5b-4a83-9590-4a9792bfc984",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 426.01,
+        "count": 1,
+        "raw_text": "1 Soured Springs",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "67daa31c-d9c4-4c22-b29c-1b8a17d577e5",
+          "oracle_id": "e579edd7-4f6c-4f22-a72f-0a20d7a698a2",
+          "name": "Soured Springs",
+          "scryfall_uri": "https://scryfall.com/card/otj/264/soured-springs",
+          "mana_cost": "",
+          "type_line": "Land — Desert",
+          "collector_number": "264",
+          "set": "otj",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/6/7/67daa31c-d9c4-4c22-b29c-1b8a17d577e5.jpg?1712356357"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "cb5c53e4-5dfa-4c78-9464-947819b9283b",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 427.01,
+        "count": 1,
+        "raw_text": "1 Shipwreck Marsh",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "156df6eb-1ac9-4954-bf93-b1668096b8bd",
+          "oracle_id": "5f42b67f-87fd-4f98-a0e8-0c8313f4bbc8",
+          "name": "Shipwreck Marsh",
+          "scryfall_uri": "https://scryfall.com/card/inr/284/shipwreck-marsh",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "284",
+          "set": "inr",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/1/5/156df6eb-1ac9-4954-bf93-b1668096b8bd.jpg?1736468690"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "0b604d63-66eb-4535-9c0d-581db65c581c",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 428.01,
+        "count": 1,
+        "raw_text": "1 Choked Estuary",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "e9ad18b2-1061-4893-9171-07ffe142a762",
+          "oracle_id": "d473b507-8c33-4118-bc10-b0a268776074",
+          "name": "Choked Estuary",
+          "scryfall_uri": "https://scryfall.com/card/mkc/254/choked-estuary",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "254",
+          "set": "mkc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/e/9/e9ad18b2-1061-4893-9171-07ffe142a762.jpg?1706241137"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "e92c085e-4519-4848-92b6-2a615eb06680",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 429.01,
+        "count": 1,
+        "raw_text": "1 Drowned Catacomb",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "07b4a6dd-0e2f-43be-93c6-7578c34a9443",
+          "oracle_id": "819fc966-434e-470f-91e9-a38df974ad17",
+          "name": "Drowned Catacomb",
+          "scryfall_uri": "https://scryfall.com/card/otc/290/drowned-catacomb",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "290",
+          "set": "otc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/0/7/07b4a6dd-0e2f-43be-93c6-7578c34a9443.jpg?1712354997"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "33e99861-0cd2-4b9a-8a29-b7dad525b37d",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 430.01,
+        "count": 1,
+        "raw_text": "1 Sunken Hollow",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "44f3e367-0dff-4cdb-b23a-52aa57fee946",
+          "oracle_id": "cd2c90ac-2b04-461c-92f3-939871b6b6a3",
+          "name": "Sunken Hollow",
+          "scryfall_uri": "https://scryfall.com/card/tdc/398/sunken-hollow",
+          "mana_cost": "",
+          "type_line": "Land — Island Swamp",
+          "collector_number": "398",
+          "set": "tdc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/4/44f3e367-0dff-4cdb-b23a-52aa57fee946.jpg?1743207761"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "7980befe-81d8-4e7f-b067-5638b7d05ea2",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 431.01,
+        "count": 1,
+        "raw_text": "1 Sunken Ruins",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "9181d30d-4f8e-421f-89b8-149ed8000fb2",
+          "oracle_id": "e6415ffb-8b7a-41c3-bedf-0d4112b7b795",
+          "name": "Sunken Ruins",
+          "scryfall_uri": "https://scryfall.com/card/2xm/326/sunken-ruins",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "326",
+          "set": "2xm",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/9/1/9181d30d-4f8e-421f-89b8-149ed8000fb2.jpg?1599710647"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "efd5a9b1-3b7f-493c-a7a7-a997438ab4a8",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 432.01,
+        "count": 1,
+        "raw_text": "1 Jwar Isle Refuge",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "6d103181-25a1-4928-ac37-adf11038d5b5",
+          "oracle_id": "8b96f837-7c32-473a-b5ae-1d66527eaf7b",
+          "name": "Jwar Isle Refuge",
+          "scryfall_uri": "https://scryfall.com/card/znc/133/jwar-isle-refuge",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "133",
+          "set": "znc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/6/d/6d103181-25a1-4928-ac37-adf11038d5b5.jpg?1604196304"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "902a6904-64d2-4530-98f1-bcbd6c6b64a3",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 433.01,
+        "count": 1,
+        "raw_text": "1 Underground Sea",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "26cee543-6eab-494e-a803-33a5d48d7d74",
+          "oracle_id": "4b22be3a-8ce1-47d1-b82e-6c3ccfb0548b",
+          "name": "Underground Sea",
+          "scryfall_uri": "https://scryfall.com/card/vma/323/underground-sea",
+          "mana_cost": "",
+          "type_line": "Land — Island Swamp",
+          "collector_number": "323",
+          "set": "vma",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/2/6/26cee543-6eab-494e-a803-33a5d48d7d74.jpg?1562902883"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "4b72d5be-c4e5-4c2b-9e8c-5b189817e301",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 434.01,
+        "count": 1,
+        "raw_text": "1 Grimoire of the Dead",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "0d8aac24-564a-420f-bb05-c67c3b0e2187",
+          "oracle_id": "922c6e1b-abcf-40e0-847e-9ebb7d0b6fd4",
+          "name": "Grimoire of the Dead",
+          "scryfall_uri": "https://scryfall.com/card/c19/213/grimoire-of-the-dead",
+          "mana_cost": "{4}",
+          "type_line": "Legendary Artifact",
+          "collector_number": "213",
+          "set": "c19",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/0/d/0d8aac24-564a-420f-bb05-c67c3b0e2187.jpg?1568004901"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "8483bb42-616c-48c4-9734-3808ad6f7933",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 435.01,
+        "count": 1,
+        "raw_text": "1 Kindred Discovery",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "8d264ad1-10a3-41ba-9740-48f2c07a0ec3",
+          "oracle_id": "005ee549-1bf5-478f-bc3f-3e791bd7eecf",
+          "name": "Kindred Discovery",
+          "scryfall_uri": "https://scryfall.com/card/lcc/159/kindred-discovery",
+          "mana_cost": "{3}{U}{U}",
+          "type_line": "Enchantment",
+          "collector_number": "159",
+          "set": "lcc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/8/d/8d264ad1-10a3-41ba-9740-48f2c07a0ec3.jpg?1698988160"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "80c4c657-bc0e-4178-8584-03f90919a3eb",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 436.01,
+        "count": 1,
+        "raw_text": "1 Tasha, the Witch Queen",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "ce387e9c-2d0e-4314-ac8d-4b7c93286fb2",
+          "oracle_id": "863a148c-596a-492b-b68e-3e1cbfcb140f",
+          "name": "Tasha, the Witch Queen",
+          "scryfall_uri": "https://scryfall.com/card/clb/364/tasha-the-witch-queen",
+          "mana_cost": "{3}{U}{B}",
+          "type_line": "Legendary Planeswalker — Tasha",
+          "collector_number": "364",
+          "set": "clb",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/c/e/ce387e9c-2d0e-4314-ac8d-4b7c93286fb2.jpg?1674138269"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "ebe05767-2f6a-43c9-816f-829988800e9a",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 437.01,
+        "count": 1,
+        "raw_text": "1 Nightscape Familiar",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "4cf1918f-ad58-4f62-bd8c-649919de0e75",
+          "oracle_id": "57296ea3-3c0d-49b7-bc08-0d0d8414e9ad",
+          "name": "Nightscape Familiar",
+          "scryfall_uri": "https://scryfall.com/card/dmr/94/nightscape-familiar",
+          "mana_cost": "{1}{B}",
+          "type_line": "Creature — Zombie",
+          "collector_number": "94",
+          "set": "dmr",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/c/4cf1918f-ad58-4f62-bd8c-649919de0e75.jpg?1675199726"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "adbde9af-acd1-4308-8e7b-c9202be7abdb",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 438.01,
+        "count": 1,
+        "raw_text": "1 Black Market",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "78c80c6d-f3ae-48d3-ba6a-b9b738e1affb",
+          "oracle_id": "21338b71-37f5-4121-9b84-565025ebcd17",
+          "name": "Black Market",
+          "scryfall_uri": "https://scryfall.com/card/clb/739/black-market",
+          "mana_cost": "{3}{B}{B}",
+          "type_line": "Enchantment",
+          "collector_number": "739",
+          "set": "clb",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/7/8/78c80c6d-f3ae-48d3-ba6a-b9b738e1affb.jpg?1674141496"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "2bd89151-a763-4a57-807d-70067a785dbd",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 439.01,
+        "count": 1,
+        "raw_text": "1 Jet Medallion",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "d423365c-a32c-4060-b178-3221e3200387",
+          "oracle_id": "bccb06f1-8839-4104-9ffa-c79a817f8378",
+          "name": "Jet Medallion",
+          "scryfall_uri": "https://scryfall.com/card/mh3/292/jet-medallion",
+          "mana_cost": "{2}",
+          "type_line": "Artifact",
+          "collector_number": "292",
+          "set": "mh3",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/d/4/d423365c-a32c-4060-b178-3221e3200387.jpg?1717013762"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "9aa2f3ee-55d8-41b9-b242-31b2dd3a8dea",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 440.01,
+        "count": 1,
+        "raw_text": "1 Accursed Duneyard",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "bd9e6ba8-1c5e-4416-8bff-90db3b3b1f41",
+          "oracle_id": "48edc348-93f6-4dce-9cc4-7244d76b6f4a",
+          "name": "Accursed Duneyard",
+          "scryfall_uri": "https://scryfall.com/card/drc/20/accursed-duneyard",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "20",
+          "set": "drc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/b/d/bd9e6ba8-1c5e-4416-8bff-90db3b3b1f41.jpg?1738355380"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "3b4cf014-2941-4c46-8b67-cfbbf41b9787",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 441.01,
+        "count": 1,
+        "raw_text": "1 Field of the Dead",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "470ca3f4-29aa-4c4c-8ff2-8cdd70c69943",
+          "oracle_id": "aa959340-c869-4caa-92c7-572bd8d23eef",
+          "name": "Field of the Dead",
+          "scryfall_uri": "https://scryfall.com/card/m20/247/field-of-the-dead",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "247",
+          "set": "m20",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/7/470ca3f4-29aa-4c4c-8ff2-8cdd70c69943.jpg?1756125065"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "04bc0c7d-f42b-4f5b-8a28-784303857d02",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 442.01,
+        "count": 1,
+        "raw_text": "1 Unholy Grotto",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "52f464a9-586c-4cf3-894b-b407c9f4dcb8",
+          "oracle_id": "c28211c6-a5ee-40c3-bb6a-da3e7e73fd95",
+          "name": "Unholy Grotto",
+          "scryfall_uri": "https://scryfall.com/card/ons/327/unholy-grotto",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "327",
+          "set": "ons",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/5/2/52f464a9-586c-4cf3-894b-b407c9f4dcb8.jpg?1562914485"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "70952d91-6339-42cb-9227-ac8185f5f179",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 443.01,
+        "count": 1,
+        "raw_text": "1 Awaken the Erstwhile",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "ea166114-2f9b-4ca6-b573-1f49f7485580",
+          "oracle_id": "06fa6719-aa4f-4857-8029-e42d01232645",
+          "name": "Awaken the Erstwhile",
+          "scryfall_uri": "https://scryfall.com/card/rna/61/awaken-the-erstwhile",
+          "mana_cost": "{3}{B}{B}",
+          "type_line": "Sorcery",
+          "collector_number": "61",
+          "set": "rna",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/e/a/ea166114-2f9b-4ca6-b573-1f49f7485580.jpg?1584830449"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "e7fbcb61-8587-4400-9c63-f5c982979f0b",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 444.01,
+        "count": 1,
+        "raw_text": "1 Dread Summons",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "dfb5dd33-6e5b-4d78-92fa-678c9f01c606",
+          "oracle_id": "642fa01d-025e-44dd-8360-5325e5a28282",
+          "name": "Dread Summons",
+          "scryfall_uri": "https://scryfall.com/card/fdn/604/dread-summons",
+          "mana_cost": "{X}{B}{B}",
+          "type_line": "Sorcery",
+          "collector_number": "604",
+          "set": "fdn",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/d/f/dfb5dd33-6e5b-4d78-92fa-678c9f01c606.jpg?1730490892"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "4d86ce1a-1fb8-4ae5-bb13-6cfb05f51f94",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 445.01,
+        "count": 1,
+        "raw_text": "1 Liliana, Heretical Healer // Liliana, Defiant Necromancer",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "d8b718d8-fca3-4b3e-9448-6067c8656a9a",
+          "oracle_id": "b96a8ad2-3d86-459b-a34f-19c9dc07c3c4",
+          "name": "Liliana, Heretical Healer // Liliana, Defiant Necromancer",
+          "scryfall_uri": "https://scryfall.com/card/cc2/1/liliana-heretical-healer-liliana-defiant-necromancer",
+          "mana_cost": "{1}{B}{B}",
+          "type_line": "Legendary Creature — Human Cleric // Legendary Planeswalker — Liliana",
+          "collector_number": "1",
+          "set": "cc2",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/d/8/d8b718d8-fca3-4b3e-9448-6067c8656a9a.jpg?1748260439",
+            "back": "https://cards.scryfall.io/large/back/d/8/d8b718d8-fca3-4b3e-9448-6067c8656a9a.jpg?1748260439"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "468eb10c-54c2-4d31-baba-7bfba980e1fe",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 446.01,
+        "count": 1,
+        "raw_text": "1 Lim-Dûl the Necromancer",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "b8a3cdfe-0289-474b-b9c4-07e8c6588ec5",
+          "oracle_id": "820052b3-d217-4b30-acc4-fa5af7465e9e",
+          "name": "Lim-Dûl the Necromancer",
+          "scryfall_uri": "https://scryfall.com/card/tsp/114/lim-d%C3%BBl-the-necromancer",
+          "mana_cost": "{5}{B}{B}",
+          "type_line": "Legendary Creature — Human Wizard",
+          "collector_number": "114",
+          "set": "tsp",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/b/8/b8a3cdfe-0289-474b-b9c4-07e8c6588ec5.jpg?1562933997"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "b2b89c83-51b8-40b3-9190-16b1cfaaa017",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 447.01,
+        "count": 1,
+        "raw_text": "1 Lord of the Accursed",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "20bfecb3-2dc8-4549-9297-413131de8fdc",
+          "oracle_id": "3f372107-6c52-4f1f-8bf0-7b3fa21b2cae",
+          "name": "Lord of the Accursed",
+          "scryfall_uri": "https://scryfall.com/card/mic/124/lord-of-the-accursed",
+          "mana_cost": "{2}{B}",
+          "type_line": "Creature — Zombie",
+          "collector_number": "124",
+          "set": "mic",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/2/0/20bfecb3-2dc8-4549-9297-413131de8fdc.jpg?1637630635"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "114d298f-84d3-4f34-8119-4c6af398b31c",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 448.01,
+        "count": 1,
+        "raw_text": "1 Vault 12: The Necropolis",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "144cd9eb-9b15-40ce-8a48-919e72dbaa67",
+          "oracle_id": "bc9d75e7-1f64-4376-8e19-f6622ffbeb28",
+          "name": "Vault 12: The Necropolis",
+          "scryfall_uri": "https://scryfall.com/card/pip/51/vault-12:-the-necropolis",
+          "mana_cost": "{4}{B}{B}",
+          "type_line": "Enchantment — Saga",
+          "collector_number": "51",
+          "set": "pip",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/1/4/144cd9eb-9b15-40ce-8a48-919e72dbaa67.jpg?1708742084"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "6d5e70cf-7e0d-4b71-8043-ffccf5c2fd89",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 449.01,
+        "count": 1,
+        "raw_text": "1 Zul Ashur, Lich Lord",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "34ad4fdb-9805-45b3-ba20-e47a15d6ff38",
+          "oracle_id": "a7c6c9b3-91f2-4ecf-b2b0-b0edd96974d9",
+          "name": "Zul Ashur, Lich Lord",
+          "scryfall_uri": "https://scryfall.com/card/fdn/77/zul-ashur-lich-lord",
+          "mana_cost": "{1}{B}",
+          "type_line": "Legendary Creature — Zombie Warlock",
+          "collector_number": "77",
+          "set": "fdn",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/3/4/34ad4fdb-9805-45b3-ba20-e47a15d6ff38.jpg?1730488875"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "96da0fd0-c849-4452-940d-f3b71b4a20be",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 450.01,
+        "count": 1,
+        "raw_text": "1 Cleaver Skaab",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "30498d6c-29e2-4d05-a5bc-e2e623c5704d",
+          "oracle_id": "9fa66e03-7b20-43f6-8c53-1ce18169c382",
+          "name": "Cleaver Skaab",
+          "scryfall_uri": "https://scryfall.com/card/mic/11/cleaver-skaab",
+          "mana_cost": "{3}{U}",
+          "type_line": "Creature — Zombie Horror",
+          "collector_number": "11",
+          "set": "mic",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/3/0/30498d6c-29e2-4d05-a5bc-e2e623c5704d.jpg?1637628015"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "648e23af-9d35-4090-a05e-70551bf8807f",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 451.01,
+        "count": 1,
+        "raw_text": "1 Bladestitched Skaab",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "af14d311-0fd5-4979-bc46-1421472c3b0a",
+          "oracle_id": "d72b8254-3df8-431b-955a-ec2aea493e2b",
+          "name": "Bladestitched Skaab",
+          "scryfall_uri": "https://scryfall.com/card/inr/231/bladestitched-skaab",
+          "mana_cost": "{U}{B}",
+          "type_line": "Creature — Zombie Soldier",
+          "collector_number": "231",
+          "set": "inr",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/a/f/af14d311-0fd5-4979-bc46-1421472c3b0a.jpg?1736468485"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "c970837a-730f-412d-add3-868eee8b94d8",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 452.01,
+        "count": 1,
+        "raw_text": "1 Wilhelt, the Rotcleaver",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "2501a911-d072-436d-ae3b-a5164e3b30aa",
+          "oracle_id": "eada96a1-4964-4ad0-b0e3-2df08d6ae188",
+          "name": "Wilhelt, the Rotcleaver",
+          "scryfall_uri": "https://scryfall.com/card/mic/2/wilhelt-the-rotcleaver",
+          "mana_cost": "{2}{U}{B}",
+          "type_line": "Legendary Creature — Zombie Warrior",
+          "collector_number": "2",
+          "set": "mic",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/2/5/2501a911-d072-436d-ae3b-a5164e3b30aa.jpg?1675456154"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "b6471b60-eb56-4cf7-8f51-356e6a9a6394",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 453.01,
+        "count": 1,
+        "raw_text": "1 Leyline of Hope",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "40960e47-3065-485e-aede-29a62411034e",
+          "oracle_id": "c7ee79c3-a273-45b4-b3a4-548d9b2b883c",
+          "name": "Leyline of Hope",
+          "scryfall_uri": "https://scryfall.com/card/dsk/18/leyline-of-hope",
+          "mana_cost": "{2}{W}{W}",
+          "type_line": "Enchantment",
+          "collector_number": "18",
+          "set": "dsk",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/0/40960e47-3065-485e-aede-29a62411034e.jpg?1726285926"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "55d4d975-9b89-4686-b2ac-0c84a2305a0e",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 454.01,
+        "count": 1,
+        "raw_text": "1 The Underworld Cookbook",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "039d62b0-3309-4424-a2ea-5a0d88d4bd72",
+          "oracle_id": "37d5c720-d090-44bc-91df-0a7bab79a03e",
+          "name": "The Underworld Cookbook",
+          "scryfall_uri": "https://scryfall.com/card/mh2/240/the-underworld-cookbook",
+          "mana_cost": "{1}",
+          "type_line": "Artifact",
+          "collector_number": "240",
+          "set": "mh2",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/0/3/039d62b0-3309-4424-a2ea-5a0d88d4bd72.jpg?1626099402"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "9972cc8c-fab9-4fcf-af41-e66a92a7aea8",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 455.01,
+        "count": 1,
+        "raw_text": "1 Reliquary Tower",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "b85a2a4b-37db-4055-bb7f-2c0c3398a9e8",
+          "oracle_id": "c23e5b80-08d2-4e24-9908-fe2aa4f30f6f",
+          "name": "Reliquary Tower",
+          "scryfall_uri": "https://scryfall.com/card/lcc/348/pt/torre-do-relic%C3%A1rio-(reliquary-tower)",
+          "mana_cost": "",
+          "type_line": "Land",
+          "collector_number": "348",
+          "set": "lcc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/b/8/b85a2a4b-37db-4055-bb7f-2c0c3398a9e8.jpg?1730200128"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "af63e9cb-fc84-473e-add0-1e3d4f2b6bf7",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 456.01,
+        "count": 1,
+        "raw_text": "1 Land Tax",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "9258ad10-cbe6-4676-93b4-6ef4a33f12ee",
+          "oracle_id": "d2d9ecea-7925-420e-98b9-2f87f41f387c",
+          "name": "Land Tax",
+          "scryfall_uri": "https://scryfall.com/card/cmm/37/land-tax",
+          "mana_cost": "{W}",
+          "type_line": "Enchantment",
+          "collector_number": "37",
+          "set": "cmm",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/9/2/9258ad10-cbe6-4676-93b4-6ef4a33f12ee.jpg?1689995812"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "8d788c20-163c-4406-9045-57b9eb355990",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 457.01,
+        "count": 1,
+        "raw_text": "1 Mystic Remora",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "40140991-cffa-4b52-9a25-37e9a8aa9ddd",
+          "oracle_id": "8a52f3c0-2552-4425-b2e3-5496eb2232a7",
+          "name": "Mystic Remora",
+          "scryfall_uri": "https://scryfall.com/card/dmr/59/mystic-remora",
+          "mana_cost": "{U}",
+          "type_line": "Enchantment",
+          "collector_number": "59",
+          "set": "dmr",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/4/0/40140991-cffa-4b52-9a25-37e9a8aa9ddd.jpg?1675199366"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "b472b0db-fd1d-4069-9a83-9144a622fad6",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 458.01,
+        "count": 1,
+        "raw_text": "1 Farewell",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "114d2180-093b-4838-97ad-badbc8ee50b0",
+          "oracle_id": "4eb813fd-2d5a-4b02-8193-662681ef4e7d",
+          "name": "Farewell",
+          "scryfall_uri": "https://scryfall.com/card/mkc/64/farewell",
+          "mana_cost": "{4}{W}{W}",
+          "type_line": "Sorcery",
+          "collector_number": "64",
+          "set": "mkc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/1/1/114d2180-093b-4838-97ad-badbc8ee50b0.jpg?1706240579"
+          }
+        }
+      },
+      {
+        "object": "deck_entry",
+        "id": "1ebff69e-700c-48d3-a0a9-1d838669f2ec",
+        "deck_id": "2c95588c-d167-42c3-bed1-8686b38a4d13",
+        "section": "columna",
+        "cardinality": 459.01,
+        "count": 1,
+        "raw_text": "1 Propaganda",
+        "found": true,
+        "printing_specified": true,
+        "finish": "nonfoil",
+        "card_digest": {
+          "object": "card_digest",
+          "id": "e175bba4-c131-48f4-8e31-16ec07a12e59",
+          "oracle_id": "ea9709b6-4c37-4d5a-b04d-cd4c42e4f9dd",
+          "name": "Propaganda",
+          "scryfall_uri": "https://scryfall.com/card/otc/108/propaganda",
+          "mana_cost": "{2}{U}",
+          "type_line": "Enchantment",
+          "collector_number": "108",
+          "set": "otc",
+          "image_uris": {
+            "front": "https://cards.scryfall.io/large/front/e/1/e175bba4-c131-48f4-8e31-16ec07a12e59.jpg?1712354188"
+          }
+        }
+      }
+    ]
+  }
+}

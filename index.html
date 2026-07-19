@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cogu MTG — Pesquisa e Wishlist de Magic: The Gathering</title>
+  <meta name="description" content="Pesquise cartas de Magic: The Gathering, descubra qual booster vale mais a pena e gerencie sua wishlist.">
+  <link rel="icon" href="assets/cogu-small.png">
+  <link rel="preconnect" href="https://api.scryfall.com">
+  <link rel="preconnect" href="https://cards.scryfall.io">
+  <link rel="preconnect" href="https://svgs.scryfall.io">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="app-header">
+    <a class="brand" href="#" data-nav="home">
+      <img src="assets/cogu-small.png" alt="Cogu, a mascote" class="brand-mascot">
+      <span class="brand-name">Cogu<span class="brand-accent">MTG</span></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegação principal">
+      <button class="nav-link active" data-nav="home">🔍 Pesquisa</button>
+      <button class="nav-link" data-nav="boosters">📦 Boosters</button>
+      <button class="nav-link" data-nav="wishlist">⭐ Wishlist <span class="nav-badge" id="wishlistBadge" hidden></span></button>
+    </nav>
+
+    <div class="header-search">
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input id="globalSearch" type="search" placeholder="Pesquisar carta… PT ou EN, nome parcial  ( / )"
+               autocomplete="off" spellcheck="false" aria-label="Pesquisar carta">
+        <button id="globalSearchClear" class="search-clear" hidden aria-label="Limpar pesquisa">✕</button>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <select id="currencySelect" class="select select-sm" title="Moeda" aria-label="Moeda">
+        <option value="usd">US$</option>
+        <option value="brl">R$</option>
+      </select>
+      <button id="themeToggle" class="icon-btn" title="Alternar tema" aria-label="Alternar tema">🌙</button>
+    </div>
+  </header>
+
+  <main class="app-main">
+
+    <!-- ===== Página: Home / Pesquisa ===== -->
+    <section id="page-home" class="page active">
+
+      <div class="results-toolbar">
+        <div class="results-heading">
+          <h2 id="resultsTitle">Carregando…</h2>
+          <span id="resultsCount" class="results-count"></span>
+        </div>
+
+        <div class="toolbar-actions">
+          <label class="toggle-chip" title="Exibe todas as impressões: artes alternativas, showcase, borderless, promos…">
+            <input type="checkbox" id="allPrintsToggle">
+            <span>✨ Todas as variações</span>
+          </label>
+          <div id="activeSetChip" class="active-chip" hidden>
+            <img id="activeSetIcon" class="chip-icon" alt="" src="">
+            <span id="activeSetName"></span>
+            <button id="activeSetClear" class="chip-clear" title="Remover filtro de expansão">✕</button>
+          </div>
+          <button id="setPickerBtn" class="btn btn-secondary btn-sm">🗺️ Expansões</button>
+          <div class="filters-anchor">
+            <button id="filtersBtn" class="btn btn-secondary btn-sm">⚙️ Filtros <span id="filtersBadge" class="nav-badge" hidden></span></button>
+
+            <div id="filtersPanel" class="filters-panel" hidden>
+              <div class="filters-group">
+                <span class="filters-label">Cor</span>
+                <div class="color-filter" id="colorFilter" role="group" aria-label="Filtro de cor">
+                  <button class="color-pip" data-color="W" title="Branco"><img src="https://svgs.scryfall.io/card-symbols/W.svg" alt="W"></button>
+                  <button class="color-pip" data-color="U" title="Azul"><img src="https://svgs.scryfall.io/card-symbols/U.svg" alt="U"></button>
+                  <button class="color-pip" data-color="B" title="Preto"><img src="https://svgs.scryfall.io/card-symbols/B.svg" alt="B"></button>
+                  <button class="color-pip" data-color="R" title="Vermelho"><img src="https://svgs.scryfall.io/card-symbols/R.svg" alt="R"></button>
+                  <button class="color-pip" data-color="G" title="Verde"><img src="https://svgs.scryfall.io/card-symbols/G.svg" alt="G"></button>
+                  <button class="color-pip" data-color="C" title="Incolor"><img src="https://svgs.scryfall.io/card-symbols/C.svg" alt="C"></button>
+                </div>
+              </div>
+
+              <div class="filters-group">
+                <span class="filters-label">Tipo</span>
+                <select id="typeFilter" class="select" aria-label="Tipo">
+                  <option value="">Todos</option>
+                  <option value="creature">Criatura</option>
+                  <option value="instant">Mágica instantânea</option>
+                  <option value="sorcery">Feitiço</option>
+                  <option value="artifact">Artefato</option>
+                  <option value="enchantment">Encantamento</option>
+                  <option value="planeswalker">Planeswalker</option>
+                  <option value="battle">Batalha</option>
+                  <option value="land">Terreno</option>
+                </select>
+              </div>
+
+              <div class="filters-group">
+                <span class="filters-label">Custo de mana</span>
+                <select id="cmcFilter" class="select" aria-label="Custo de mana">
+                  <option value="">Qualquer</option>
+                  <option value="0">0</option><option value="1">1</option>
+                  <option value="2">2</option><option value="3">3</option>
+                  <option value="4">4</option><option value="5">5</option>
+                  <option value="6">6</option><option value="7+">7+</option>
+                </select>
+              </div>
+
+              <div class="filters-group">
+                <span class="filters-label">Raridade</span>
+                <select id="rarityFilter" class="select" aria-label="Raridade">
+                  <option value="">Todas</option>
+                  <option value="common">Comum</option>
+                  <option value="uncommon">Incomum</option>
+                  <option value="rare">Rara</option>
+                  <option value="mythic">Mítica</option>
+                </select>
+              </div>
+
+              <div class="filters-group">
+                <span class="filters-label">Ordenar por</span>
+                <select id="sortFilter" class="select" aria-label="Ordenar por">
+                  <option value="name">Nome</option>
+                  <option value="released">Lançamento</option>
+                  <option value="usd">Preço ↓</option>
+                  <option value="cmc">Custo de mana</option>
+                  <option value="rarity">Raridade</option>
+                </select>
+              </div>
+
+              <button id="clearFilters" class="btn btn-ghost btn-sm">Limpar filtros</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="cardGrid" class="card-grid" aria-live="polite"></div>
+
+      <div id="homeStatus" class="status-area">
+        <div class="loader" hidden id="homeLoader"><div class="spinner"></div> Buscando cartas…</div>
+        <button id="loadMoreBtn" class="btn btn-secondary" hidden>Carregar mais</button>
+        <div id="homeEmpty" class="empty-state" hidden>
+          <img src="assets/cogu.png" alt="" class="empty-mascot">
+          <h3>Nenhuma carta encontrada</h3>
+          <p>Tente outro nome ou remova alguns filtros.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Página: Boosters ===== -->
+    <section id="page-boosters" class="page" hidden>
+      <div class="page-intro">
+        <img src="assets/cogu.png" alt="" class="intro-mascot" aria-hidden="true">
+        <div>
+          <h1>Qual booster vale mais a pena?</h1>
+          <p>Pesquise uma carta e descubra em quais boosters ela pode aparecer, a chance de abri-la e o custo médio por tentativa. Clique num preço para ajustá-lo ao valor da sua loja.</p>
+        </div>
+      </div>
+
+      <div class="search-panel">
+        <div class="search-row">
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">🎯</span>
+            <input id="boosterSearch" type="search" placeholder="Qual carta você quer conseguir? ex.: Akroma  ( / )"
+                   autocomplete="off" spellcheck="false" aria-label="Pesquisar carta para análise de boosters">
+          </div>
+          <button id="boosterSearchBtn" class="btn btn-primary">Analisar</button>
+        </div>
+        <div id="boosterSuggestions" class="suggestions" hidden></div>
+      </div>
+
+      <div id="boosterResults" class="booster-results"></div>
+
+      <div id="boosterEmpty" class="empty-state">
+        <img src="assets/cogu.png" alt="" class="empty-mascot">
+        <h3>Pesquise uma carta para começar</h3>
+        <p>Vou mostrar todos os boosters em que ela aparece, com probabilidade e preço médio de cada um.</p>
+      </div>
+    </section>
+
+    <!-- ===== Página: Wishlist ===== -->
+    <section id="page-wishlist" class="page" hidden>
+      <div class="wishlist-header">
+        <div class="wishlist-title-wrap">
+          <div class="wl-switcher">
+            <button id="wlActiveBtn" class="wl-active-btn" aria-haspopup="true" aria-expanded="false" title="Trocar / gerenciar wishlists">
+              <span class="wl-active-icon" aria-hidden="true">📋</span>
+              <span id="wlActiveName">Minha Wishlist</span>
+              <span class="wl-caret" aria-hidden="true">▾</span>
+            </button>
+            <div id="wlMenu" class="wl-menu" hidden role="menu"></div>
+          </div>
+          <p id="wishlistSummary" class="wishlist-summary"></p>
+        </div>
+        <div class="wishlist-actions">
+          <button id="wlEditionBtn" class="btn btn-secondary wl-edition-btn" aria-haspopup="dialog" title="Filtrar por edição">
+            <img id="wlEditionIcon" class="wl-edition-icon" alt="" hidden>
+            <span id="wlEditionLabel">🗺️ Todas as edições</span>
+            <span class="wl-caret" aria-hidden="true">▾</span>
+          </button>
+          <button id="wlExportBtn" class="btn btn-secondary">💾 Backup</button>
+          <button id="wlImportBtn" class="btn btn-secondary">📥 Importar</button>
+        </div>
+      </div>
+
+      <div class="search-panel">
+        <div class="search-row">
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">⭐</span>
+            <input id="wlSearch" type="search" placeholder="Adicionar carta à wishlist… ex.: Birds of Paradise  ( / )"
+                   autocomplete="off" spellcheck="false" aria-label="Adicionar carta à wishlist">
+          </div>
+        </div>
+        <div id="wlSuggestions" class="suggestions" hidden></div>
+      </div>
+
+      <div id="wlImportPanel" class="import-panel" hidden>
+        <h3>Importar cartas</h3>
+        <ol class="import-steps">
+          <li><strong>Wishlist do Scryfall:</strong> abra sua lista e clique em <strong>Download / Export → JSON</strong>.</li>
+          <li><strong>Backup deste app:</strong> use o arquivo gerado pelo botão 💾 Backup.</li>
+          <li>Arraste o arquivo para cá, ou clique para selecionar.</li>
+        </ol>
+        <label id="wlDropZone" class="drop-zone">
+          <input type="file" id="wlImportFile" accept=".json,.txt,.csv" hidden>
+          <span>📄 Solte o arquivo aqui ou <u>clique para escolher</u></span>
+        </label>
+        <details class="import-alt">
+          <summary>Ou cole uma lista de texto</summary>
+          <textarea id="wlImportText" rows="5" placeholder="1 Birds of Paradise&#10;2 Akroma, Angel of Wrath"></textarea>
+          <button id="wlImportTextBtn" class="btn btn-secondary btn-sm">Importar texto</button>
+        </details>
+        <div id="wlImportStatus" class="import-status"></div>
+      </div>
+
+      <div class="wl-toolbar" id="wlToolbar" hidden>
+        <div class="wl-toolbar-left">
+          <label class="toggle-chip" id="wlHideAcquiredChip" title="Ocultar cartas já adquiridas">
+            <input type="checkbox" id="wlHideAcquired">
+            <span>✅ Ocultar adquiridas</span>
+          </label>
+          <span class="wl-toolbar-hint" id="wlToolbarHint"></span>
+        </div>
+        <div class="view-toggle" role="group" aria-label="Modo de visualização">
+          <button id="wlViewList" class="view-btn active" aria-pressed="true" title="Ver em lista">☰ Lista</button>
+          <button id="wlViewGrid" class="view-btn" aria-pressed="false" title="Ver em grade">▦ Grade</button>
+        </div>
+      </div>
+
+      <div class="wl-table-wrap" id="wlTableWrap">
+        <table id="wlTable" class="wl-table" hidden>
+          <thead>
+            <tr>
+              <th class="wl-th-acq" title="Adquirida">✓</th>
+              <th></th>
+              <th data-sort="name" class="sortable">Carta</th>
+              <th data-sort="set" class="sortable">Edição</th>
+              <th>Tratamento</th>
+              <th>Acabamento</th>
+              <th data-sort="qty" class="sortable th-num">Qtd</th>
+              <th data-sort="price" class="sortable th-num">Unitário</th>
+              <th data-sort="total" class="sortable th-num">Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="wlTableBody"></tbody>
+        </table>
+      </div>
+
+      <div id="wlGrid" class="card-grid wl-grid" hidden></div>
+
+      <div id="wlEmpty" class="empty-state" hidden>
+        <img src="assets/cogu.png" alt="" class="empty-mascot">
+        <h3>Sua wishlist está vazia</h3>
+        <p>Pesquise uma carta acima ou adicione direto da página de pesquisa.</p>
+      </div>
+
+      <div id="wlFilterEmpty" class="empty-state" hidden>
+        <img src="assets/cogu.png" alt="" class="empty-mascot">
+        <h3>Nenhuma carta nesta edição</h3>
+        <p>Remova o filtro de edição para ver o restante da wishlist.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p class="shortcuts-hint">
+      <kbd>/</kbd> pesquisar · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> trocar página · <kbd>←→↑↓</kbd> navegar cartas ·
+      <kbd>Enter</kbd> detalhes · <kbd>W</kbd> wishlist · <kbd>B</kbd> boosters · <kbd>Esc</kbd> fechar
+    </p>
+    <p>Dados de cartas e preços por <a href="https://scryfall.com" target="_blank" rel="noopener">Scryfall</a>.
+    Probabilidades de booster são estimativas baseadas nas estruturas oficiais dos produtos.</p>
+  </footer>
+
+  <!-- Drawer de carta / versões e seletor de expansões (preenchidos via JS) -->
+  <div id="cardModal" class="modal" hidden role="dialog" aria-modal="true"></div>
+  <div id="setPicker" class="modal" hidden role="dialog" aria-modal="true"></div>
+  <div id="wlDialog" class="modal" hidden role="dialog" aria-modal="true"></div>
+  <div id="toastArea" class="toast-area" aria-live="polite"></div>
+
+  <script src="js/core/ui.js"></script>
+  <script src="js/core/scryfall.js"></script>
+  <script src="js/core/state.js"></script>
+  <script src="js/data/boosters.js"></script>
+  <script src="js/features/card-modal.js"></script>
+  <script src="js/features/home.js"></script>
+  <script src="js/features/boosters.js"></script>
+  <script src="js/features/wishlist.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

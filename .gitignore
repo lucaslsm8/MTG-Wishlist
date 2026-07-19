@@ -1,0 +1,8 @@
+# Superpowers subagent-driven scratch (ledger, review packages, task briefs)
+.superpowers/
+
+# OS / editor junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+*~
