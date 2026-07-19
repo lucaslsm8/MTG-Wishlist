@@ -394,21 +394,13 @@ select:focus-visible,
 .app-footer a:hover { color: var(--accent-2); }
 .shortcuts-hint kbd { margin: 0 1px; }
 
-/* ---------- Responsivo ---------- */
-@media (max-width: 860px) {
-  .app-shell { grid-template-columns: 1fr; }
-  .sidebar {
-    position: static;
-    height: auto;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-  }
-  .main-nav { flex-direction: row; margin-top: 0; }
-  .sidebar-footer { margin-top: 0; padding-top: 0; border-top: none; margin-left: auto; }
-  .topbar { padding: 0 var(--space-sm); }
-  .app-main { padding: var(--space-md) var(--space-sm) var(--space-xl); }
+/* ---------- Responsivo: tablet (sidebar ainda lateral, só mais estreita) ----------
+   O breakpoint principal (sidebar → barra inferior) vive na seção consolidada
+   no fim do arquivo, para vencer a cascata em qualquer largura menor. */
+@media (max-width: 1024px) {
+  :root { --sidebar-w: 208px; }
+  .topbar { padding: 0 var(--space-md); }
+  .app-main { padding: var(--space-md) var(--space-md) var(--space-xl); }
 }
 
 /* ============================================================
@@ -2066,6 +2058,118 @@ td.td-num .wl-price { color: var(--gold); font-weight: 700; }
 /* ----- Toque da Cogu nos vazios ----- */
 .empty-mascot { transition: transform var(--transition-slow); }
 .empty-state:hover .empty-mascot { transform: translateY(-4px) rotate(-3deg); }
+
+/* ============================================================
+   Breakpoints consolidados (Task 8)
+   Desktop continua a vista principal e mais polida; estas regras
+   só evitam quebras em telas menores. Ficam ao fim do arquivo de
+   propósito — na cascata, a última regra com a mesma especificidade
+   vence, então este bloco (do mais largo ao mais estreito) tem a
+   palavra final sobre qualquer ajuste pontual feito mais acima.
+   ============================================================ */
+
+/* ----- ~720px: sidebar vira barra de abas fixa no rodapé ----- */
+@media (max-width: 720px) {
+  :root { --bottombar-h: 60px; }
+
+  .app-shell { grid-template-columns: 1fr; }
+
+  .sidebar {
+    position: fixed;
+    inset: auto 0 0 0;
+    top: auto;
+    z-index: 100;
+    height: var(--bottombar-h);
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: var(--space-2xs);
+    padding: var(--space-2xs) var(--space-sm);
+    border-right: none;
+    border-top: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+  }
+  /* A marca some da barra inferior para caber a navegação; ela continua
+     acessível pela aba "Pesquisa" (mesmo destino, data-nav="home"). */
+  .brand { display: none; }
+
+  .main-nav {
+    flex: 1;
+    height: 100%;
+    flex-direction: row;
+    align-items: stretch;
+    margin-top: 0;
+    gap: 2px;
+    min-width: 0;
+  }
+  .nav-link {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    padding: 6px 4px;
+    font-size: var(--text-xs);
+    line-height: 1.15;
+    white-space: normal;
+  }
+  /* Indicador de ativo migra da lateral (trilho vertical) para o topo da aba. */
+  .nav-link::before {
+    left: 50%;
+    top: -2px;
+    width: 0;
+    height: 3px;
+    transform: translateX(-50%);
+  }
+  .nav-link.active::before { width: 55%; height: 3px; }
+  .nav-badge { margin-left: 4px; }
+
+  .sidebar-footer {
+    flex: none;
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: var(--space-2xs);
+    border-top: none;
+    border-left: 1px solid var(--border-soft);
+    gap: 6px;
+  }
+
+  .app-main {
+    padding: var(--space-md) var(--space-sm) calc(var(--bottombar-h) + var(--space-md));
+  }
+
+  .topbar { padding: 0 var(--space-sm); }
+  .header-search { max-width: none; }
+
+  .results-toolbar { align-items: stretch; }
+  .toolbar-actions { width: 100%; }
+}
+
+/* ----- ~480px: tabelas rolam dentro do próprio contêiner, não a página ----- */
+@media (max-width: 480px) {
+  .app-main {
+    padding: var(--space-sm) var(--space-xs) calc(var(--bottombar-h, 60px) + var(--space-lg));
+  }
+  .card-grid { grid-template-columns: repeat(auto-fill, minmax(122px, 1fr)); gap: var(--space-xs); }
+
+  .wishlist-summary strong { font-size: var(--text-xl); }
+  .wishlist-header { gap: var(--space-sm); }
+  .wl-table-wrap { -webkit-overflow-scrolling: touch; }
+
+  /* Tabela de boosters não tem wrapper próprio no markup (gerado por JS) —
+     a própria <table> vira o contêiner de rolagem horizontal, preservando
+     o layout interno de thead/tbody/tr/td (técnica sem necessidade de
+     alterar JS/markup: display:block só no elemento <table>). */
+  .booster-table { display: block; max-width: 100%; overflow-x: auto; white-space: nowrap; }
+
+  .page-intro { gap: var(--space-sm); }
+  .booster-card-head { padding: var(--space-sm); }
+  .icon-btn { width: 32px; height: 32px; font-size: .85rem; }
+  .select-sm { padding: 5px 22px 5px 8px; font-size: var(--text-xs); }
+}
 
 /* ---------- Movimento reduzido ---------- */
 @media (prefers-reduced-motion: reduce) {
