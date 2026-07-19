@@ -533,9 +533,9 @@ select:focus-visible,
   border-radius: 50%;
   background: var(--bg-elev-3);
   padding: 2px;
+  filter: invert(1) brightness(1.15);
 }
 [data-theme="light"] .chip-icon { filter: none; }
-.chip-icon { filter: invert(1) brightness(1.15); }
 .chip-clear {
   display: inline-flex; align-items: center; justify-content: center;
   width: 20px; height: 20px;
