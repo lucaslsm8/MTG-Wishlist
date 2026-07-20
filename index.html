@@ -13,42 +13,38 @@
 </head>
 <body>
 
-  <!-- ===== App shell: sidebar + topbar ===== -->
-  <div class="app-shell">
-    <aside class="sidebar">
-      <a class="brand" href="#" data-nav="home">
-        <img src="assets/cogu-small.png" alt="Cogu, a mascote" class="brand-mascot">
-        <span class="brand-name">Cogu<span class="brand-accent">MTG</span></span>
-      </a>
+  <!-- ===== Header ===== -->
+  <header class="app-header">
+    <a class="brand" href="#" data-nav="home">
+      <img src="assets/cogu-small.png" alt="Cogu, a mascote" class="brand-mascot">
+      <span class="brand-name">Cogu<span class="brand-accent">MTG</span></span>
+    </a>
 
-      <nav class="main-nav" aria-label="Navegação principal">
-        <button class="nav-link active" data-nav="home">🔍 Pesquisa</button>
-        <button class="nav-link" data-nav="boosters">📦 Boosters</button>
-        <button class="nav-link" data-nav="wishlist">⭐ Wishlist <span class="nav-badge" id="wishlistBadge" hidden></span></button>
-      </nav>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <button class="nav-link active" data-nav="home">🔍 Pesquisa</button>
+      <button class="nav-link" data-nav="boosters">📦 Boosters</button>
+      <button class="nav-link" data-nav="wishlist">⭐ Wishlist <span class="nav-badge" id="wishlistBadge" hidden></span></button>
+    </nav>
 
-      <div class="sidebar-footer">
-        <select id="currencySelect" class="select select-sm" title="Moeda" aria-label="Moeda">
-          <option value="usd">US$</option>
-          <option value="brl">R$</option>
-        </select>
-        <button id="themeToggle" class="icon-btn" title="Alternar tema" aria-label="Alternar tema">🌙</button>
+    <div class="header-search">
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input id="globalSearch" type="search" placeholder="Pesquisar carta… PT ou EN, nome parcial  ( / )"
+               autocomplete="off" spellcheck="false" aria-label="Pesquisar carta">
+        <button id="globalSearchClear" class="search-clear" hidden aria-label="Limpar pesquisa">✕</button>
       </div>
-    </aside>
+    </div>
 
-    <div class="app-content">
-      <header class="topbar">
-        <div class="header-search">
-          <div class="search-box">
-            <span class="search-icon" aria-hidden="true">🔍</span>
-            <input id="globalSearch" type="search" placeholder="Pesquisar carta… PT ou EN, nome parcial  ( / )"
-                   autocomplete="off" spellcheck="false" aria-label="Pesquisar carta">
-            <button id="globalSearchClear" class="search-clear" hidden aria-label="Limpar pesquisa">✕</button>
-          </div>
-        </div>
-      </header>
+    <div class="header-actions">
+      <select id="currencySelect" class="select select-sm" title="Moeda" aria-label="Moeda">
+        <option value="usd">US$</option>
+        <option value="brl">R$</option>
+      </select>
+      <button id="themeToggle" class="icon-btn" title="Alternar tema" aria-label="Alternar tema">🌙</button>
+    </div>
+  </header>
 
-      <main class="app-main">
+  <main class="app-main">
 
     <!-- ===== Página: Home / Pesquisa ===== -->
     <section id="page-home" class="page active">
@@ -287,18 +283,16 @@
         <p>Remova o filtro de edição para ver o restante da wishlist.</p>
       </div>
     </section>
-      </main>
+  </main>
 
-      <footer class="app-footer">
-        <p class="shortcuts-hint">
-          <kbd>/</kbd> pesquisar · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> trocar página · <kbd>←→↑↓</kbd> navegar cartas ·
-          <kbd>Enter</kbd> detalhes · <kbd>W</kbd> wishlist · <kbd>B</kbd> boosters · <kbd>Esc</kbd> fechar
-        </p>
-        <p>Dados de cartas e preços por <a href="https://scryfall.com" target="_blank" rel="noopener">Scryfall</a>.
-        Probabilidades de booster são estimativas baseadas nas estruturas oficiais dos produtos.</p>
-      </footer>
-    </div>
-  </div>
+  <footer class="app-footer">
+    <p class="shortcuts-hint">
+      <kbd>/</kbd> pesquisar · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> trocar página · <kbd>←→↑↓</kbd> navegar cartas ·
+      <kbd>Enter</kbd> detalhes · <kbd>W</kbd> wishlist · <kbd>B</kbd> boosters · <kbd>Esc</kbd> fechar
+    </p>
+    <p>Dados de cartas e preços por <a href="https://scryfall.com" target="_blank" rel="noopener">Scryfall</a>.
+    Probabilidades de booster são estimativas baseadas nas estruturas oficiais dos produtos.</p>
+  </footer>
 
   <!-- Drawer de carta / versões e seletor de expansões (preenchidos via JS) -->
   <div id="cardModal" class="modal" hidden role="dialog" aria-modal="true"></div>
