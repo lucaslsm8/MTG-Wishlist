@@ -220,22 +220,24 @@ img { max-width: 100%; }
   display: flex; align-items: center; gap: 12px;
   width: 100%; text-align: left;
   border: none; background: transparent; color: var(--text);
-  padding: 9px 10px; border-radius: var(--radius-sm);
-  font-size: .92rem;
-  transition: background var(--transition);
+  padding: 7px 10px; border-radius: var(--radius-sm);
+  font-size: .9rem;
+  transition: background var(--transition), color var(--transition);
 }
-.set-item:hover { background: var(--accent-soft); }
+.set-item:hover { background: var(--accent-soft); color: var(--accent); }
 .set-item.current { background: var(--accent-soft); outline: 1px solid var(--accent); }
 .set-item-icon {
-  width: 26px; height: 26px; flex-shrink: 0; object-fit: contain;
+  width: 24px; height: 24px; flex-shrink: 0; object-fit: contain;
   filter: invert(.72);
 }
+.set-item:hover .set-item-icon { filter: none; }
 [data-theme="light"] .set-item-icon { filter: none; opacity: .8; }
 .set-item-name { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
-.set-item-meta { color: var(--text-muted); font-size: .78rem; white-space: nowrap; }
+.set-item-meta { color: var(--text-muted); font-size: .76rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.set-item:hover .set-item-meta { color: color-mix(in srgb, var(--accent) 70%, var(--text-muted)); }
 .set-group-label {
-  padding: 14px 10px 4px; color: var(--text-muted);
-  font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+  padding: 15px 10px 5px; color: var(--text-faint);
+  font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
 }
 
 kbd {
@@ -248,9 +250,11 @@ kbd {
 .shortcuts-hint { margin-bottom: 6px; }
 
 /* ---------- Intros ---------- */
-.page-intro { display: flex; align-items: center; gap: 20px; padding-bottom: 22px; }
-.intro-mascot { width: 72px; height: 72px; object-fit: contain; }
-.page-intro p { color: var(--text-muted); max-width: 60ch; }
+/* Cabeçalho da página Boosters — sem mascote (o Cogu grande vive no estado
+   vazio; evita dois mascotes na mesma tela). H1 já usa a serif display. */
+.page-intro { display: flex; flex-direction: column; gap: 6px; padding-bottom: 24px; }
+.intro-mascot { display: none; }
+.page-intro p { color: var(--text-muted); max-width: 62ch; font-size: .96rem; line-height: 1.55; }
 
 /* ---------- Painel de pesquisa ---------- */
 .search-panel {
@@ -463,6 +467,7 @@ kbd {
 
 .booster-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
 .booster-table th, .booster-table td { padding: 12px 18px; text-align: left; }
+.booster-table td { font-variant-numeric: tabular-nums; }
 .booster-table th { color: var(--text-muted); font-weight: 600; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
 .booster-table tr + tr td { border-top: 1px solid var(--border); }
 .booster-table .prob { font-weight: 700; color: var(--accent-2); }
@@ -669,6 +674,7 @@ kbd {
 .wl-table th.sorted-asc::after { content: ' ↑'; color: var(--accent); }
 .wl-table th.sorted-desc::after { content: ' ↓'; color: var(--accent); }
 .wl-table .th-num, .wl-table .td-num { text-align: right; }
+.wl-table .td-num { font-variant-numeric: tabular-nums; }
 .wl-table tbody tr { transition: background var(--transition); }
 .wl-table tbody tr:hover { background: var(--bg-elev-2); }
 .wl-table tbody tr + tr td { border-top: 1px solid var(--border); }
