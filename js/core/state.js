@@ -12,7 +12,8 @@
     theme: 'mtg-theme',
     currency: 'mtg-currency',
     usdBrl: 'mtg-usd-brl',
-    boosterPrices: 'mtg-booster-prices'
+    boosterPrices: 'mtg-booster-prices',
+    acquired: 'mtg-acquired'             // cartas marcadas como adquiridas (independe da wishlist)
   };
 
   const listeners = new Set();
@@ -49,6 +50,10 @@
   const _wishlists = loadWishlists();
   let _activeId = load(KEYS.activeWishlist, _wishlists[0].id);
   if (!_wishlists.some(w => w.id === _activeId)) _activeId = _wishlists[0].id;
+
+  // Conjunto de cartas marcadas como adquiridas (por id de impressão do Scryfall).
+  // É independente das wishlists: marcar como adquirida só apaga/atenua a carta.
+  const _acquired = new Set(load(KEYS.acquired, []));
 
   const Store = {
     wishlists: _wishlists,
@@ -247,7 +252,25 @@
       this.saveWishlist();
     },
 
-    /** Marca/desmarca um item como já adquirido. */
+    /* ---------- Adquiridas (avulsas, fora da wishlist) ---------- */
+    /** Chave de uma carta no conjunto de adquiridas (id da impressão). */
+    acquiredKey(card) { return card?.id || ''; },
+
+    /** A carta já foi marcada como adquirida? */
+    isAcquired(card) { return _acquired.has(this.acquiredKey(card)); },
+
+    /** Alterna a marca de adquirida; retorna o novo estado (true = adquirida). */
+    toggleAcquired(card) {
+      const key = this.acquiredKey(card);
+      if (!key) return false;
+      const now = !_acquired.has(key);
+      if (now) _acquired.add(key); else _acquired.delete(key);
+      persist(KEYS.acquired, [..._acquired]);
+      this.notify('acquired');
+      return now;
+    },
+
+    /** Marca/desmarca um item da wishlist como já adquirido. */
     setAcquired(id, finish, value) {
       const item = this.activeWishlist.items.find(i => i.id === id && i.finish === finish);
       if (!item) return;

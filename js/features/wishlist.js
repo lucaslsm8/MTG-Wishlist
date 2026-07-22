@@ -90,7 +90,7 @@
           ? `↩️ ${item.displayName} voltou para a lista de desejos`
           : `✅ ${item.displayName} marcada como adquirida`);
       }
-    }, on ? '✓' : '');
+    }, on ? UI.el('span', {}, '✓') : '');
   }
 
   /* ---------- Renderização (lista) ---------- */
@@ -145,9 +145,9 @@
     const price = Store.itemPriceUsd(item);
     const treatment = UI.treatmentLabel(item);
 
-    return el('div', { class: 'card-tile wl-tile' + (item.acquired ? ' wl-tile-acquired' : '') },
+    return el('div', { class: `card-tile wl-tile rar-${item.rarity}` + (item.acquired ? ' wl-tile-acquired' : '') },
       el('div', { class: 'card-tile-img' },
-        el('img', {
+        UI.img({
           src: item.image, alt: item.displayName, loading: 'lazy',
           style: 'cursor:pointer', title: 'Ver todas as versões',
           onclick: () => openVersions(item)
@@ -160,11 +160,11 @@
           el('button', { class: 'wl-side-btn wl-side-danger', title: 'Remover', onclick: (e) => { e.stopPropagation(); Store.removeFromWishlist(item.id, item.finish); UI.toast(`${item.displayName} removida.`); } }, '🗑️')
         )
       ),
-      el('div', { class: 'card-tile-info' },
+      el('div', { class: `card-tile-info fio-${item.rarity}` },
         el('span', { class: 'card-tile-name', title: item.name }, item.displayName),
         el('span', { class: 'wl-tile-setline', title: item.setName }, `${item.setName} · #${item.collectorNumber}`),
         el('div', { class: 'card-tile-meta' },
-          el('span', { class: `rarity-${item.rarity}` }, UI.rarityLabel(item.rarity)),
+          el('span', { class: `rarity-tag rarity-${item.rarity}` }, UI.rarityLabel(item.rarity)),
           el('span', {}, FINISH_LABEL[item.finish] || item.finish)),
         treatment ? el('span', { class: 'card-tile-treatment' }, treatment) : null,
         el('div', { class: 'wl-tile-foot' },

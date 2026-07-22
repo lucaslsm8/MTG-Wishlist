@@ -840,7 +840,7 @@ kbd {
 .wl-tile .card-tile-info { gap: 6px; }
 .wl-tile-setline { font-size: .78rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .wl-tile-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 2px; }
-.wl-tile-total { color: var(--gold); font-weight: 700; font-size: .9rem; }
+.wl-tile-total { color: var(--gold); font-weight: 700; font-size: .9rem; font-variant-numeric: tabular-nums; }
 
 /* Coluna de ações sobre a carta, à direita e na vertical — só no hover (não reserva espaço) */
 .wl-tile-side {
