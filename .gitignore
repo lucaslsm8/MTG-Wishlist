@@ -1,6 +1,12 @@
 # Superpowers subagent-driven scratch (ledger, review packages, task briefs)
 .superpowers/
 
+# Claude Code local config
+.claude/
+
+# Prototype scratch page (not linked in the app)
+design-lab.html
+
 # OS / editor junk
 Thumbs.db
 Desktop.ini

@@ -66,9 +66,27 @@
     const { el } = UI;
     const price = card.prices?.usd || card.prices?.usd_foil;
     const name = card.printed_name_pt || UI.displayName(card);
+    const typeLine = card.printed_type_line || card.type_line || '';
+    const acquired = Store.isAcquired(card);
 
-    return el('div', {
-      class: 'card-tile', tabindex: '0', role: 'button',
+    // Botão de adquirida (✓): atenua a carta e persiste, sem entrar na wishlist.
+    const checkBtn = el('button', {
+      class: 'tile-btn tile-btn-check' + (acquired ? ' is-on' : ''),
+      title: acquired ? 'Marcada como adquirida' : 'Marcar como adquirida',
+      'aria-pressed': String(acquired),
+      onclick: (e) => {
+        e.stopPropagation();
+        const on = Store.toggleAcquired(card);
+        tile.classList.toggle('is-acquired', on);
+        checkBtn.classList.toggle('is-on', on);
+        checkBtn.setAttribute('aria-pressed', String(on));
+        checkBtn.title = on ? 'Marcada como adquirida' : 'Marcar como adquirida';
+        UI.toast(on ? `${name} marcada como adquirida.` : `${name} desmarcada.`);
+      }
+    }, el('span', {}, '✓'));
+
+    const tile = el('div', {
+      class: `card-tile rar-${card.rarity}` + (acquired ? ' is-acquired' : ''), tabindex: '0', role: 'button',
       'aria-label': `${name}, ver detalhes`,
       onclick: () => CardModal.open(card),
       onkeydown: (e) => {
@@ -83,42 +101,58 @@
       }
     },
       el('div', { class: 'card-tile-img' },
-        el('img', { src: UI.cardImage(card), alt: name, loading: 'lazy' }),
+        UI.img({ src: UI.cardImage(card), alt: name, loading: 'lazy' }),
         el('div', { class: 'card-tile-actions' },
+          checkBtn,
           el('button', {
-            class: 'tile-btn', title: 'Adicionar à wishlist',
+            class: 'tile-btn tile-btn-wish', title: 'Adicionar à wishlist',
             onclick: (e) => {
               e.stopPropagation();
               WishlistPage.addCard(card);
             }
-          }, '⭐'),
-          el('button', {
-            class: 'tile-btn', title: 'Ver boosters para esta carta',
-            onclick: (e) => { e.stopPropagation(); App.go('boosters', { card: card.name }); }
-          }, '📦')
+          }, el('span', {}, '+'))
         )
       ),
       el('div', { class: 'card-tile-info' },
         el('span', { class: 'card-tile-name', title: card.name }, name),
+        el('span', { class: 'card-tile-type', title: typeLine }, typeLine || ' '),
         state.allPrints
-          ? el('span', { class: 'card-tile-set', title: card.set_name },
+          ? el('span', { class: 'card-tile-setline', title: card.set_name },
               `${card.set_name} · #${card.collector_number}`)
           : null,
-        state.allPrints && UI.treatmentLabel(card)
-          ? el('span', { class: 'card-tile-treatment' }, UI.treatmentLabel(card))
+        // ' ' reserva a linha mesmo sem tratamento: mantém os cards da
+        // mesma fileira com altura igual no modo "todas as variações"
+        state.allPrints
+          ? el('span', { class: 'card-tile-treatment' }, UI.treatmentLabel(card) || ' ')
           : null,
         el('div', { class: 'card-tile-meta' },
-          el('span', { class: `rarity-${card.rarity}` }, UI.rarityLabel(card.rarity)),
+          el('span', { class: `card-tile-rarity rarity-${card.rarity}` }, UI.rarityLabel(card.rarity)),
           el('span', { class: 'card-tile-price' }, price ? Store.fmtPrice(price) : '')
         )
       )
     );
+
+    return tile;
   }
 
-  function setLoading(on) {
+  function setLoading(on, { spinner = true } = {}) {
     state.loading = on;
-    $('homeLoader').hidden = !on;
+    $('homeLoader').hidden = !on || !spinner;
     if (on) { $('homeEmpty').hidden = true; $('loadMoreBtn').hidden = true; }
+  }
+
+  /** Skeletons no lugar dos cards enquanto uma busca nova carrega. */
+  function renderSkeletons(n = 12) {
+    const { el } = UI;
+    const grid = $('cardGrid');
+    grid.innerHTML = '';
+    for (let i = 0; i < n; i++) {
+      grid.append(el('div', { class: 'skeleton-tile', 'aria-hidden': 'true' },
+        el('div', { class: 'sk-img' }),
+        el('div', { class: 'sk-line' }),
+        el('div', { class: 'sk-line sm' })
+      ));
+    }
   }
 
   function renderResults(cards, { append = false, title, total } = {}) {
@@ -157,7 +191,8 @@
   async function runSearch({ append = false } = {}) {
     if (state.loading) return;
     syncChrome();
-    setLoading(true);
+    setLoading(true, { spinner: append });
+    if (!append) renderSkeletons();
     try {
       let result;
       if (append && state.nextPage) {
@@ -178,20 +213,26 @@
       renderResults(result.cards, { append, title, total: result.total });
     } catch (err) {
       console.error(err);
+      clearSkeletons();
       UI.toast('Erro ao pesquisar. Tente novamente.', 'error');
     } finally {
       setLoading(false);
     }
   }
 
+  function clearSkeletons() {
+    $('cardGrid').querySelectorAll('.skeleton-tile').forEach(n => n.remove());
+  }
+
   /** Vitrine padrão: cartas da expansão mais recente (detectada dinamicamente). */
   async function showLatestSet() {
     syncChrome();
-    setLoading(true);
+    setLoading(true, { spinner: false });
+    renderSkeletons();
     try {
       if (!state.latestSet) state.latestSet = await Scryfall.latestSet();
       const set = state.latestSet;
-      if (!set) return;
+      if (!set) { clearSkeletons(); return; }
       const result = await Scryfall.search(`set:${set.code}`, {
         order: 'set', dir: 'asc',
         unique: state.allPrints ? 'prints' : 'cards',
@@ -204,6 +245,7 @@
       });
     } catch (err) {
       console.error(err);
+      clearSkeletons();
       UI.toast('Erro ao carregar a expansão mais recente.', 'error');
     } finally {
       setLoading(false);

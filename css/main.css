@@ -59,6 +59,7 @@
   --text: #221d2b;
   --text-muted: #726a7c;
   --text-faint: #9a92a3;
+  --gold: #a8770f;          /* dourado mais escuro: legível sobre o creme */
   --accent-soft: rgba(224, 80, 60, .10);
   --rarity-common: #8b8496;
   --shadow-sm: 0 1px 2px rgba(90, 70, 40, .1), 0 2px 8px rgba(90, 70, 40, .08);
@@ -86,6 +87,29 @@ button { font-family: inherit; cursor: pointer; }
 input, select, textarea { font-family: inherit; font-size: .95rem; }
 img { max-width: 100%; }
 [hidden] { display: none !important; }
+
+h1, h2, h3 { text-wrap: balance; }
+.page-intro p, .empty-state p { text-wrap: pretty; }
+
+/* Anel de foco visível para navegação por teclado (cards têm o próprio) */
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+/* Imagens que surgem com fade ao carregar (via UI.img) */
+.img-fade { opacity: 0; transition: opacity .45s ease; }
+.img-fade.loaded { opacity: 1; }
+
+/* Movimento reduzido: preferência do sistema vence qualquer animação */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
 
 /* ---------- Header ---------- */
 .app-header {
@@ -354,72 +378,299 @@ kbd {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(184px, 1fr));
-  gap: 18px 16px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px 18px;
 }
+/* ============ Card tile — estilo "Premium (Apple)" ============ */
 .card-tile {
-  background: var(--bg-elev);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
+  /* Glow/borda/foil seguem a RARIDADE da carta (default = comum) */
+  --glow: 150, 160, 180;
+  position: relative;
+  /* Gradiente noturno */
+  background: linear-gradient(180deg, #1B242C 0%, #12161A 100%);
+  border: 1px solid #2a333c;
+  border-radius: 18px;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 26px rgba(0, 0, 0, .4);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   display: flex; flex-direction: column;
 }
-.card-tile:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+/* Glow/borda seguem a raridade */
+.card-tile.rar-common   { --glow: 150, 160, 180; }
+.card-tile.rar-uncommon { --glow: 120, 184, 200; }
+.card-tile.rar-rare     { --glow: 232, 182, 76; }
+.card-tile.rar-mythic   { --glow: 240, 106, 63; }
+/* Glow sutil (cor da raridade) no topo do tile */
+.card-tile::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 88px; z-index: 4;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(var(--glow), .14) 0%, rgba(var(--glow), .04) 45%, transparent 100%);
+  opacity: .9; transition: opacity var(--transition), background var(--transition);
 }
-.card-tile:active { transform: translateY(-2px); }
+/* Hover: borda + glow verde */
+.card-tile:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--glow), .75);
+  box-shadow:
+    0 0 0 1px rgba(var(--glow), .70),
+    0 0 24px rgba(var(--glow), .38),
+    0 18px 40px rgba(0, 0, 0, .55);
+}
+.card-tile:hover::before {
+  background: linear-gradient(180deg, rgba(var(--glow), .26) 0%, rgba(var(--glow), .08) 45%, transparent 100%);
+  opacity: 1;
+}
+.card-tile:active { transform: translateY(-1px); }
 .card-tile:focus-visible {
   outline: none;
-  border-color: var(--accent-2);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-2) 32%, transparent);
+  border-color: rgba(var(--glow), .85);
+  box-shadow: 0 0 0 3px rgba(var(--glow), .40), var(--shadow-sm);
 }
+/* Área da arte: carta por inteiro, AFUNDADA no card (well recessado) */
 .card-tile-img {
-  aspect-ratio: 488 / 680;
-  background:
-    radial-gradient(120% 80% at 50% 0%, var(--bg-elev-3), var(--bg-elev-2));
   position: relative;
+  background: transparent;
+  padding: 14px; padding-bottom: 10px;
 }
 .card-tile-img img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform var(--transition-slow);
+  width: 100%; height: auto; display: block;
+  border-radius: 7px;
+  transition: transform var(--transition-slow), opacity .45s ease;
 }
-.card-tile:hover .card-tile-img img { transform: scale(1.035); }
+.card-tile:hover .card-tile-img img { transform: translateY(-2px) scale(1.012); }
+
+/* Well recessado: sombra INTERNA nas bordas da imagem → parece afundada */
+.card-tile-img::before {
+  content: ''; position: absolute; inset: 14px; top: 14px; bottom: 10px; z-index: 2;
+  pointer-events: none; border-radius: 7px;
+  box-shadow:
+    inset 0 2px 10px rgba(0, 0, 0, .6),
+    inset 0 0 0 1px rgba(0, 0, 0, .45),
+    inset 0 -1px 0 rgba(255, 255, 255, .04);
+}
+/* Brilho "foil": reflexo que varre a arte no hover */
+.card-tile-img::after {
+  content: ''; position: absolute; inset: 14px; z-index: 3; pointer-events: none;
+  border-radius: 7px; overflow: hidden;
+  background: linear-gradient(115deg,
+    transparent 38%,
+    rgba(255, 255, 255, .10) 46%,
+    rgba(var(--glow), .14) 50%,
+    rgba(255, 255, 255, .10) 54%,
+    transparent 62%);
+  transform: translateX(-102%);
+  opacity: 0;
+}
+.card-tile:hover .card-tile-img::after,
+.card-tile:focus-visible .card-tile-img::after {
+  transform: translateX(102%);
+  opacity: 1;
+  transition: transform .75s cubic-bezier(.3, .5, .3, 1), opacity .2s ease;
+}
+
+@keyframes shimmer { to { transform: translateX(100%); } }
 .card-tile-actions {
-  position: absolute; inset: auto 8px 8px auto;
-  display: flex; gap: 6px;
-  opacity: 0; transform: translateY(5px);
+  /* Coluna de ícones no canto superior direito da carta, só no hover */
+  position: absolute; inset: 14px 14px auto auto; z-index: 5;
+  display: flex; flex-direction: column; gap: 8px;
+  opacity: 0; transform: translateY(-4px) scale(.92);
   transition: opacity var(--transition), transform var(--transition);
 }
-.card-tile:hover .card-tile-actions, .card-tile:focus-within .card-tile-actions { opacity: 1; transform: none; }
+.card-tile:hover .card-tile-actions,
+.card-tile:focus-within .card-tile-actions { opacity: 1; transform: none; }
+/* Botão de vidro escuro/fumê com brilho especular e glare */
 .tile-btn {
-  border: 1px solid rgba(255, 255, 255, .14); border-radius: var(--radius-xs);
-  background: color-mix(in srgb, #0a0810 78%, transparent); color: #fff;
-  padding: 7px 10px; font-size: .85rem;
-  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-  transition: background var(--transition), transform var(--transition);
+  position: relative;
+  width: 38px; height: 38px; padding: 0; flex-shrink: 0;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255, 255, 255, .14); border-radius: 13px;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .03)),
+    rgba(16, 20, 26, .55);
+  color: #fff;
+  font-size: 1.05rem; line-height: 1; cursor: pointer; overflow: hidden;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, .34),
+    inset 0 -6px 12px rgba(0, 0, 0, .30),
+    0 5px 16px rgba(0, 0, 0, .42);
+  backdrop-filter: blur(13px) saturate(1.35); -webkit-backdrop-filter: blur(13px) saturate(1.35);
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
 }
-.tile-btn:hover { background: var(--accent); transform: translateY(-1px); }
-.card-tile-info { padding: 11px 13px 13px; display: flex; flex-direction: column; gap: 5px; }
+/* Glare de luz diagonal */
+.tile-btn::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(128deg, transparent 34%, rgba(255, 255, 255, .30) 47%, rgba(255, 255, 255, .06) 53%, transparent 62%);
+  opacity: .6;
+}
+.tile-btn > * { position: relative; z-index: 1; }
+.tile-btn:hover { transform: scale(1.08); border-color: rgba(255, 255, 255, .28); }
+.tile-btn-wish { font-size: 1.3rem; font-weight: 400; }
+.tile-btn-wish:hover {
+  background: linear-gradient(160deg, rgba(255,255,255,.18), rgba(255,255,255,.02)), rgba(224, 80, 60, .5);
+  border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.tile-btn-check:hover { border-color: color-mix(in srgb, var(--acquired) 60%, transparent); transform: scale(1.08); }
+.tile-btn-check.is-on {
+  background: linear-gradient(160deg, rgba(255,255,255,.2), rgba(255,255,255,.03)), rgba(70, 176, 106, .55);
+  border-color: color-mix(in srgb, var(--acquired, #46b06a) 60%, transparent);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.34),
+    0 4px 14px color-mix(in srgb, var(--acquired, #46b06a) 40%, transparent);
+}
+
+/* Carta adquirida: atenuada, como na wishlist (não entra na wishlist) */
+.card-tile.is-acquired .card-tile-img img { opacity: .42; filter: saturate(.55); }
+.card-tile.is-acquired .card-tile-name { text-decoration: line-through; text-decoration-color: var(--text-faint); }
+/* Rodapé do card: nome, linha de tipo, divisória e (raridade • preço) */
+.card-tile-info {
+  padding: 15px 18px 17px;
+  display: flex; flex-direction: column; gap: 3px;
+  margin-top: auto;
+}
 .card-tile-name {
-  font-weight: 600; font-size: .92rem; letter-spacing: -.01em;
+  font-weight: 650; font-size: 1.15rem; letter-spacing: -.005em; color: var(--text);
+  line-height: 1.15;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+/* Linha de tipo — ex.: "Creature — Elf Druid" */
+.card-tile-type {
+  font-size: .84rem; color: var(--text-muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.card-tile-setline {
+  font-size: .74rem; color: var(--text-faint);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .card-tile-meta {
   display: flex; justify-content: space-between; align-items: center;
-  font-size: .72rem; gap: 8px;
-  text-transform: uppercase; letter-spacing: .04em; font-weight: 700;
+  gap: 8px; margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, .07);   /* divisória */
 }
-.card-tile-price { color: var(--gold); font-weight: 700; font-family: var(--font-num); font-size: .8rem; letter-spacing: 0; }
+/* Raridade como TAG (pílula) — legível em fundo claro e escuro */
+.card-tile-rarity {
+  --rc: var(--rarity-common);
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .66rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  padding: 4px 10px 4px 9px; border-radius: 999px;
+  color: var(--rc); white-space: nowrap;
+  background: color-mix(in srgb, var(--rc) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--rc) 34%, transparent);
+}
+.card-tile-rarity::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+  background: var(--rc);
+}
+.card-tile-rarity.rarity-uncommon { --rc: var(--rarity-uncommon); }
+.card-tile-rarity.rarity-rare     { --rc: var(--rarity-rare); }
+.card-tile-rarity.rarity-mythic   { --rc: var(--rarity-mythic); }
+/* No claro, comum precisa de texto mais escuro p/ contraste */
+[data-theme="light"] .card-tile-rarity { --rc: #6f6879; }
+[data-theme="light"] .card-tile-rarity.rarity-uncommon { --rc: #4f8496; }
+[data-theme="light"] .card-tile-rarity.rarity-rare { --rc: #a8770f; }
+[data-theme="light"] .card-tile-rarity.rarity-mythic { --rc: #cf4a24; }
+
+/* Preço — menor e mais moderno */
+.card-tile-price {
+  color: var(--accent-2); font-weight: 600;
+  font-size: .92rem; letter-spacing: -.01em;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+
+/* ============ Card tile — VERSÃO DIÚRNA (tema claro) ============ */
+[data-theme="light"] .card-tile {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F1ECE1 100%);
+  border-color: #E4DCCC;
+  box-shadow: 0 1px 2px rgba(90, 70, 40, .10), 0 10px 26px rgba(90, 70, 40, .12);
+}
+[data-theme="light"] .card-tile::before {
+  background: linear-gradient(180deg, rgba(var(--glow), .16) 0%, rgba(var(--glow), .05) 45%, transparent 100%);
+}
+[data-theme="light"] .card-tile:hover {
+  border-color: rgba(var(--glow), .70);
+  box-shadow: 0 0 0 1px rgba(var(--glow), .60), 0 0 22px rgba(var(--glow), .34), 0 18px 40px rgba(90, 70, 40, .18);
+}
+[data-theme="light"] .card-tile:hover::before {
+  background: linear-gradient(180deg, rgba(var(--glow), .24) 0%, rgba(var(--glow), .07) 45%, transparent 100%);
+}
+/* Well recessado mais suave no claro */
+[data-theme="light"] .card-tile-img::before {
+  box-shadow: inset 0 2px 8px rgba(60, 45, 20, .30), inset 0 0 0 1px rgba(0, 0, 0, .14);
+}
+[data-theme="light"] .card-tile-meta { border-top-color: rgba(0, 0, 0, .09); }
+/* Vidro claro: frost translúcido com ícones escuros */
+[data-theme="light"] .tile-btn {
+  border-color: rgba(0, 0, 0, .10); color: #3a3340;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, .75), rgba(255, 255, 255, .4)),
+    rgba(240, 238, 232, .35);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, .9),
+    inset 0 -6px 12px rgba(60, 45, 20, .10),
+    0 5px 16px rgba(60, 45, 20, .18);
+}
+[data-theme="light"] .tile-btn::before {
+  background: linear-gradient(128deg, transparent 34%, rgba(255, 255, 255, .7) 47%, rgba(255, 255, 255, .2) 53%, transparent 62%);
+}
+[data-theme="light"] .tile-btn-wish:hover {
+  color: #fff;
+  background: linear-gradient(160deg, rgba(255,255,255,.5), rgba(255,255,255,.2)), rgba(224, 80, 60, .85);
+}
+[data-theme="light"] .tile-btn-check.is-on {
+  color: #fff;
+  background: linear-gradient(160deg, rgba(255,255,255,.5), rgba(255,255,255,.2)), rgba(70, 176, 106, .9);
+}
+
+/* Tag de raridade em pílula — ainda usada pela grade da wishlist */
+.rarity-tag {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .62rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  padding: 3px 9px 3px 8px; border-radius: 999px;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  white-space: nowrap;
+}
+.rarity-tag::before {
+  content: ''; width: 5px; height: 5px; flex-shrink: 0;
+  border-radius: 1.5px; background: currentColor; transform: rotate(45deg);
+}
+.rarity-tag.rarity-rare::before,
+.rarity-tag.rarity-mythic::before {
+  box-shadow: 0 0 6px color-mix(in srgb, currentColor 80%, transparent);
+}
 .rarity-common   { color: var(--rarity-common); }
 .rarity-uncommon { color: var(--rarity-uncommon); }
 .rarity-rare     { color: var(--rarity-rare); }
 .rarity-mythic   { color: var(--rarity-mythic); }
 
 /* ---------- Estados ---------- */
+/* Skeletons: ocupam o lugar dos cards enquanto a busca carrega */
+.skeleton-tile {
+  background: var(--bg-elev);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.sk-img {
+  aspect-ratio: 488 / 680; position: relative; overflow: hidden;
+  background: radial-gradient(120% 80% at 50% 0%, var(--bg-elev-3), var(--bg-elev-2));
+}
+.sk-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(100deg,
+    transparent 30%,
+    color-mix(in srgb, var(--text) 5%, transparent) 50%,
+    transparent 70%);
+  transform: translateX(-100%);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+.sk-line {
+  height: 11px; border-radius: 6px;
+  background: var(--bg-elev-2);
+  margin: 13px 13px 0;
+}
+.sk-line.sm { width: 52%; margin-bottom: 15px; }
+
 .status-area { display: flex; flex-direction: column; align-items: center; padding: 28px 0; gap: 14px; }
 .loader { display: flex; align-items: center; gap: 10px; color: var(--text-muted); }
 .spinner {
@@ -432,7 +683,11 @@ kbd {
 .empty-state {
   text-align: center; padding: 44px 20px; color: var(--text-muted);
 }
-.empty-mascot { width: 110px; opacity: .9; margin-bottom: 12px; filter: grayscale(.15); }
+.empty-mascot {
+  width: 110px; opacity: .9; margin-bottom: 12px; filter: grayscale(.15);
+  animation: floaty 5s ease-in-out infinite;
+}
+@keyframes floaty { 50% { transform: translateY(-7px); } }
 .empty-state h3 { color: var(--text); font-size: 1.1rem; }
 
 /* ---------- Página Boosters ---------- */
@@ -763,6 +1018,12 @@ kbd {
 }
 .modal-close:hover { background: var(--accent); color: #fff; transform: rotate(90deg); }
 .modal-body { overflow-y: auto; padding: 24px 22px 28px; }
+
+/* Scrollbars finas e discretas nas áreas roláveis internas */
+.modal-body, .set-picker-list, .wl-dialog-list {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--text-faint) 45%, transparent) transparent;
+}
 
 /* Detalhes da carta no drawer */
 .card-detail {

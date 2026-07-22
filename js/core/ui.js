@@ -24,6 +24,17 @@
       return node;
     },
 
+    /** <img> que surge com fade suave ao terminar de carregar. */
+    img(attrs = {}) {
+      const cls = attrs.class ? `${attrs.class} img-fade` : 'img-fade';
+      const node = UI.el('img', { ...attrs, class: cls });
+      const done = () => node.classList.add('loaded');
+      node.addEventListener('load', done, { once: true });
+      node.addEventListener('error', done, { once: true });
+      if (node.complete && node.naturalWidth) done();
+      return node;
+    },
+
     escape(str) {
       return String(str ?? '').replace(/[&<>"']/g, c => ({
         '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
