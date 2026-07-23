@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://api.scryfall.com">
   <link rel="preconnect" href="https://cards.scryfall.io">
   <link rel="preconnect" href="https://svgs.scryfall.io">
-  <link rel="stylesheet" href="css/main.css?v=5">
+  <link rel="stylesheet" href="css/main.css?v=14">
 </head>
 <body>
 
@@ -24,6 +24,7 @@
       <button class="nav-link active" data-nav="home">🔍 Pesquisa</button>
       <button class="nav-link" data-nav="boosters">📦 Boosters</button>
       <button class="nav-link" data-nav="wishlist">⭐ Wishlist <span class="nav-badge" id="wishlistBadge" hidden></span></button>
+      <button class="nav-link" data-nav="collection">💎 Coleção <span class="nav-badge" id="collectionBadge" hidden></span></button>
     </nav>
 
     <div class="header-search">
@@ -283,11 +284,73 @@
         <p>Remova o filtro de edição para ver o restante da wishlist.</p>
       </div>
     </section>
+
+    <!-- ===== Página: Coleção ===== -->
+    <section id="page-collection" class="page" hidden>
+      <div class="collection-header">
+        <div class="collection-title-wrap">
+          <h1 class="collection-title">💎 Minha Coleção</h1>
+          <p id="collectionSummary" class="collection-summary"></p>
+        </div>
+        <div class="collection-value" id="collectionValueBox" hidden>
+          <span class="collection-value-label">Valor total</span>
+          <span id="collectionValue" class="collection-value-amount">—</span>
+        </div>
+      </div>
+
+      <div class="search-panel">
+        <div class="search-row">
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">💎</span>
+            <input id="colSearch" type="search" placeholder="Adicionar carta que você já tem… escolha a versão exata  ( / )"
+                   autocomplete="off" spellcheck="false" aria-label="Adicionar carta à coleção">
+          </div>
+          <button id="colScanBtn" class="btn btn-primary col-scan-btn" title="Escanear carta com a câmera">📷 Escanear</button>
+        </div>
+        <div id="colSuggestions" class="suggestions" hidden></div>
+      </div>
+
+      <div class="collection-toolbar" id="collectionToolbar" hidden>
+        <button id="colSetBtn" class="btn btn-secondary btn-sm">
+          <img id="colSetIcon" class="wl-edition-icon" alt="" hidden>
+          <span id="colSetLabel">🗺️ Todas as coleções</span>
+          <span class="wl-caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="view-toggle" role="group" aria-label="Modo de exibição">
+          <button id="colViewGrid" class="view-btn active" aria-pressed="true" title="Ver em grade">▦ Grade</button>
+          <button id="colViewCompact" class="view-btn" aria-pressed="false" title="Ver compacto">☰ Compacta</button>
+        </div>
+        <label class="collection-sort">
+          <span class="filters-label">Ordenar</span>
+          <select id="colSortFilter" class="select select-sm" aria-label="Ordenar coleção">
+            <option value="name">Nome</option>
+            <option value="price">Preço ↓</option>
+            <option value="rarity">Raridade</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="colHydrating" class="loader" hidden><div class="spinner"></div> Recuperando dados das cartas adquiridas…</div>
+
+      <div id="collectionGroups" class="collection-groups"></div>
+
+      <div id="colEmpty" class="empty-state" hidden>
+        <img src="assets/cogu.png" alt="" class="empty-mascot">
+        <h3>Sua coleção está vazia</h3>
+        <p>Marque cartas como adquiridas na pesquisa ou na wishlist, ou adicione uma acima.</p>
+      </div>
+
+      <div id="colFilterEmpty" class="empty-state" hidden>
+        <img src="assets/cogu.png" alt="" class="empty-mascot">
+        <h3>Nenhuma carta nesta coleção</h3>
+        <p>Remova o filtro para ver o restante da sua coleção.</p>
+      </div>
+    </section>
   </main>
 
   <footer class="app-footer">
     <p class="shortcuts-hint">
-      <kbd>/</kbd> pesquisar · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> trocar página · <kbd>←→↑↓</kbd> navegar cartas ·
+      <kbd>/</kbd> pesquisar · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd> trocar página · <kbd>←→↑↓</kbd> navegar cartas ·
       <kbd>Enter</kbd> detalhes · <kbd>W</kbd> wishlist · <kbd>B</kbd> boosters · <kbd>Esc</kbd> fechar
     </p>
     <p>Dados de cartas e preços por <a href="https://scryfall.com" target="_blank" rel="noopener">Scryfall</a>.
@@ -298,16 +361,19 @@
   <div id="cardModal" class="modal" hidden role="dialog" aria-modal="true"></div>
   <div id="setPicker" class="modal" hidden role="dialog" aria-modal="true"></div>
   <div id="wlDialog" class="modal" hidden role="dialog" aria-modal="true"></div>
+  <div id="scanModal" class="modal" hidden role="dialog" aria-modal="true"></div>
   <div id="toastArea" class="toast-area" aria-live="polite"></div>
 
   <script src="js/core/ui.js?v=2"></script>
-  <script src="js/core/scryfall.js?v=2"></script>
-  <script src="js/core/state.js?v=5"></script>
+  <script src="js/core/scryfall.js?v=3"></script>
+  <script src="js/core/state.js?v=6"></script>
   <script src="js/data/boosters.js?v=2"></script>
   <script src="js/features/card-modal.js?v=5"></script>
   <script src="js/features/home.js?v=5"></script>
   <script src="js/features/boosters.js?v=2"></script>
   <script src="js/features/wishlist.js?v=4"></script>
-  <script src="js/main.js?v=2"></script>
+  <script src="js/features/scanner.js?v=4"></script>
+  <script src="js/features/collection.js?v=5"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>

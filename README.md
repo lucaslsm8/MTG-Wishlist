@@ -1,6 +1,6 @@
 # Cogu MTG
 
-Aplicação desktop (navegador) para pesquisa e gerenciamento de cartas de Magic: The Gathering, com a Cogu (a menina cogumelo) como mascote. Sem build, sem dependências: abra `index.html` no navegador.
+Aplicação desktop (navegador) para pesquisa e gerenciamento de cartas de Magic: The Gathering, com a Cogu (a menina cogumelo) como mascote. Sem build: abra `index.html` no navegador. O núcleo não tem dependências; o único extra é o [Tesseract.js](https://tesseract.projectnaptha.com/) (OCR do scanner de cartas), carregado sob demanda via CDN só quando você usa a câmera.
 
 > **Layout novo ("Galeria + Cogu"):** o `index.html` da raiz é o design repaginado (sidebar lateral, grid de galeria, tema escuro editorial). A versão original está preservada e intacta em **`backup/`** — abra `backup/index.html` para voltar ao layout antigo a qualquer momento. Os dois usam a mesma lógica; só a apresentação muda.
 
@@ -12,9 +12,13 @@ Aplicação desktop (navegador) para pesquisa e gerenciamento de cartas de Magic
 
 **⭐ Wishlist** — tabela densa com colunas ordenáveis (carta, edição, qtd, preço, total). Adicione de qualquer pesquisa, escolha a versão exata (arte/expansão/tratamento) e o acabamento (normal/foil/etched); versões diferentes coexistem. Valor total automático. Importa a wishlist do Scryfall (JSON exportado, preservando impressão e acabamento), lista de texto, e tem backup próprio (💾 exporta/restaura sem rede).
 
+**💎 Coleção** — as cartas que você já tem. Visão combinada (união por impressão): cartas marcadas como adquiridas na pesquisa **e** itens de qualquer wishlist marcados como adquiridos aparecem juntos, sem duplicar. Presença apenas ("tenho / não tenho"), distinguindo a impressão exata (arte/edição). Cabeçalho compacto com valor total (moeda ativa) e contagem; dois modos de exibição (**Grade** agrupada por coleção e **Compacta** em lista densa para muitas cartas); filtro **multi-seleção** de coleções (veja quantas quiser ao mesmo tempo) e ordenação (nome/preço/raridade). Busca própria para adicionar qualquer carta. Cartas adquiridas na versão antiga (só o id) são recuperadas automaticamente via Scryfall na primeira abertura.
+
+**📷 Escanear carta** — na Coleção, aponte a câmera para uma carta física e adicione-a à coleção. Tem **zoom** (nativo da câmera quando disponível, senão digital; slider, botões e pinça no celular) para o nome preencher o guia. Ao capturar, faz OCR local (Tesseract.js, sem enviar a foto para ninguém) de **dois sinais**: o **nome** (topo) e a **edição + número de coletor** (rodapé, que identifica a impressão exata). Junta tudo — impressão exata por edição/número, nome fuzzy, busca por nome e autocomplete — e mostra uma **lista de cartas candidatas** para você tocar na certa. Dá pra escanear várias em sequência. Requer câmera e contexto seguro (https, ex.: GitHub Pages) — em `file://` alguns navegadores bloqueiam a câmera.
+
 ## Atalhos de teclado
 
-`/` foca a pesquisa da página atual · `1` `2` `3` trocam de página · setas navegam o grid de cartas · `Enter` abre versões · `W` adiciona à wishlist · `B` analisa boosters · `Esc` fecha painéis.
+`/` foca a pesquisa da página atual · `1` `2` `3` `4` trocam de página · setas navegam o grid de cartas · `Enter` abre versões · `W` adiciona à wishlist · `B` analisa boosters · `Esc` fecha painéis.
 
 ## Estrutura
 
@@ -29,6 +33,8 @@ js/
   features/home.js    Página de pesquisa
   features/boosters.js  Análise de boosters
   features/wishlist.js  Wishlist
+  features/collection.js Minha Coleção (cartas adquiridas)
+  features/scanner.js   Escanear carta pela câmera (OCR + Scryfall)
   features/card-modal.js Modal de versões (compartilhado)
   main.js             Navegação, tema, moeda, inicialização
 assets/               Mascote Cogu (otimizada + arte original em cogu-source.png)
@@ -40,5 +46,5 @@ assets/               Mascote Cogu (otimizada + arte original em cogu-source.png
 - Pesquisa bilíngue: tenta em inglês; sem resultados, busca nomes impressos `lang:pt` e resolve para as cartas canônicas via `oracle_id`.
 - Moeda: USD ou BRL (cotação diária de open.er-api.com, com cache e fallback).
 - Probabilidades de booster são estimativas baseadas nas estruturas oficiais dos produtos (slot de rara/mítica ≈ `2/(2R+M)` e `1/(2R+M)`).
-- Persistência via `localStorage` (`mtg-wishlist`, `mtg-theme`, `mtg-currency`).
+- Persistência via `localStorage` (`mtg-wishlists`, `mtg-acquired`, `mtg-theme`, `mtg-currency`). A coleção (`mtg-acquired`) guarda um snapshot completo por impressão; ids do formato antigo são hidratados via Scryfall na primeira abertura.
 - A importação da wishlist do Scryfall usa o arquivo exportado (Download → JSON) porque a API de decks do Scryfall exige OAuth.

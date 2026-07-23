@@ -51,9 +51,21 @@
   let _activeId = load(KEYS.activeWishlist, _wishlists[0].id);
   if (!_wishlists.some(w => w.id === _activeId)) _activeId = _wishlists[0].id;
 
-  // Conjunto de cartas marcadas como adquiridas (por id de impressão do Scryfall).
-  // É independente das wishlists: marcar como adquirida só apaga/atenua a carta.
-  const _acquired = new Set(load(KEYS.acquired, []));
+  // Cartas marcadas como adquiridas, indexadas pelo id da impressão do Scryfall.
+  // Guarda um snapshot completo (nome, imagem, preços…) para alimentar a
+  // página "Minha Coleção" sem depender de rede. É independente das wishlists.
+  // Formato antigo (array de ids) é migrado: ids sem dados ficam null até
+  // serem hidratados via Scryfall (hydrateAcquired).
+  const _acquired = new Map();
+  for (const entry of Array.isArray(load(KEYS.acquired, [])) ? load(KEYS.acquired, []) : []) {
+    if (typeof entry === 'string') _acquired.set(entry, null);      // legado: só o id
+    else if (entry && entry.id) _acquired.set(entry.id, entry);      // snapshot completo
+  }
+  function persistAcquired() {
+    const arr = [];
+    for (const [id, snap] of _acquired) arr.push(snap || id);
+    persist(KEYS.acquired, arr);
+  }
 
   const Store = {
     wishlists: _wishlists,
@@ -256,18 +268,124 @@
     /** Chave de uma carta no conjunto de adquiridas (id da impressão). */
     acquiredKey(card) { return card?.id || ''; },
 
+    /** Snapshot enxuto de uma impressão para a coleção (presença, sem qty/finish). */
+    toAcquiredSnapshot(card) {
+      return {
+        id: card.id,
+        oracleId: card.oracle_id,
+        name: card.name,
+        displayName: UI.displayName(card),
+        set: card.set,
+        setName: card.set_name,
+        collectorNumber: card.collector_number,
+        rarity: card.rarity,
+        image: UI.cardImage(card),
+        prices: card.prices || {},
+        frame_effects: card.frame_effects || [],
+        border_color: card.border_color,
+        promo_types: card.promo_types || [],
+        promo: !!card.promo,
+        full_art: !!card.full_art,
+        scryfallUri: card.scryfall_uri
+      };
+    },
+
     /** A carta já foi marcada como adquirida? */
     isAcquired(card) { return _acquired.has(this.acquiredKey(card)); },
+
+    /** Adiciona uma impressão à coleção (idempotente). Retorna true se entrou agora. */
+    acquireCard(card) {
+      const key = this.acquiredKey(card);
+      if (!key || (_acquired.has(key) && _acquired.get(key))) return false;
+      _acquired.set(key, this.toAcquiredSnapshot(card));
+      persistAcquired();
+      this.notify('acquired');
+      return true;
+    },
 
     /** Alterna a marca de adquirida; retorna o novo estado (true = adquirida). */
     toggleAcquired(card) {
       const key = this.acquiredKey(card);
       if (!key) return false;
       const now = !_acquired.has(key);
-      if (now) _acquired.add(key); else _acquired.delete(key);
-      persist(KEYS.acquired, [..._acquired]);
+      if (now) _acquired.set(key, this.toAcquiredSnapshot(card));
+      else _acquired.delete(key);
+      persistAcquired();
       this.notify('acquired');
       return now;
+    },
+
+    /**
+     * Remove uma impressão da coleção, venha ela de onde vier: apaga do store
+     * de adquiridas E desmarca `acquired` em qualquer wishlist que a contenha.
+     */
+    unacquireCard(id) {
+      let changed = _acquired.delete(id);
+      for (const w of this.wishlists) {
+        for (const it of w.items) {
+          if (it.id === id && it.acquired) { it.acquired = false; changed = true; }
+        }
+      }
+      if (!changed) return;
+      persistAcquired();
+      this.saveWishlists();
+      this.notify('acquired');
+      this.notify('wishlist');
+    },
+
+    /**
+     * Cartas da coleção: união (por id de impressão) do store de adquiridas
+     * com os itens de qualquer wishlist marcados como adquiridos. Sem duplicar.
+     */
+    collectionCards() {
+      const map = new Map();
+      for (const [id, snap] of _acquired) {
+        if (snap) map.set(id, { ...snap, source: 'acquired' });
+      }
+      for (const w of this.wishlists) {
+        for (const it of w.items) {
+          if (it.acquired && !map.has(it.id)) map.set(it.id, { ...it, source: 'wishlist' });
+        }
+      }
+      return [...map.values()];
+    },
+
+    /** Preço unitário (USD) de um snapshot da coleção (presença, sem finish). */
+    snapshotPriceUsd(entry) {
+      const p = entry.prices || {};
+      return parseFloat(p.usd || p.usd_foil || p.usd_etched || 0) || 0;
+    },
+
+    /** Contagem e valor total da coleção, na moeda ativa (valor em USD). */
+    collectionTotals() {
+      const cards = this.collectionCards();
+      let totalUsd = 0;
+      for (const c of cards) totalUsd += this.snapshotPriceUsd(c);
+      return { count: cards.length, totalUsd };
+    },
+
+    /** Quantas impressões da coleção ainda estão sem dados (ids legados). */
+    acquiredNeedingHydration() {
+      let n = 0;
+      for (const [, snap] of _acquired) if (!snap) n++;
+      return n;
+    },
+
+    /** Hidrata ids legados (sem dados) buscando os snapshots no Scryfall. */
+    async hydrateAcquired() {
+      const missing = [];
+      for (const [id, snap] of _acquired) if (!snap) missing.push(id);
+      if (!missing.length) return 0;
+      try {
+        const { found } = await Scryfall.collection(missing.map(id => ({ id })));
+        const foundIds = new Set(found.map(c => c.id));
+        for (const card of found) _acquired.set(card.id, this.toAcquiredSnapshot(card));
+        // ids que o Scryfall não conhece mais: descarta para não travar a hidratação
+        for (const id of missing) if (!foundIds.has(id)) _acquired.delete(id);
+        persistAcquired();
+        this.notify('acquired');
+        return found.length;
+      } catch { return 0; }
     },
 
     /** Marca/desmarca um item da wishlist como já adquirido. */

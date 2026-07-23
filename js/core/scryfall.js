@@ -105,6 +105,12 @@
       return request(`${API}/cards/${id}`);
     },
 
+    /** Carta pela edição + número de coletor (impressão exata). */
+    async bySetNumber(code, number) {
+      if (!code || !number) return null;
+      return request(`${API}/cards/${encodeURIComponent(String(code).toLowerCase())}/${encodeURIComponent(String(number))}`);
+    },
+
     /** Todas as impressões de uma carta (todas as páginas). */
     async prints(name) {
       const q = encodeURIComponent(`!"${name}"`);

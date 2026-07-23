@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  const PAGES = ['home', 'boosters', 'wishlist'];
+  const PAGES = ['home', 'boosters', 'wishlist', 'collection'];
 
   const App = {
     current: 'home',
@@ -25,6 +25,7 @@
       window.scrollTo({ top: 0 });
 
       if (page === 'boosters' && opts.card) BoostersPage.analyzeCard(opts.card);
+      if (page === 'collection') CollectionPage.onShow();
     },
 
     init() {
@@ -55,6 +56,7 @@
       HomePage.init();
       BoostersPage.init();
       WishlistPage.init();
+      CollectionPage.init();
     },
 
     /**
@@ -77,11 +79,12 @@
           case '/':
             e.preventDefault();
             if (drawerOpen) CardModal.close();
-            ({ home: HomePage, boosters: BoostersPage, wishlist: WishlistPage })[this.current].focusSearch();
+            ({ home: HomePage, boosters: BoostersPage, wishlist: WishlistPage, collection: CollectionPage })[this.current].focusSearch();
             break;
           case '1': this.go('home'); break;
           case '2': this.go('boosters'); break;
           case '3': this.go('wishlist'); break;
+          case '4': this.go('collection'); break;
           case 'ArrowLeft':
           case 'ArrowRight':
           case 'ArrowUp':
