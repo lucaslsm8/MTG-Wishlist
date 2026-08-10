@@ -51,29 +51,60 @@
   /* ---------- Recorte + pré-processamento de uma região da carta ---------- */
   // zoom = fator de zoom DIGITAL aplicado (1 quando o zoom é nativo/óptico da
   // câmera, pois nesse caso o quadro já vem ampliado).
-  function cropRegion(video, zoom, region, opts = {}) {
-    const vw = video.videoWidth, vh = video.videoHeight;
-    const cardH = (vh / zoom) * CARD_FRAC;
+  // src = elemento <video> OU um ImageBitmap de alta resolução (foto do sensor).
+  function cropRegion(src, zoom, region, opts = {}) {
+    const sW = src.videoWidth || src.width;
+    const sH = src.videoHeight || src.height;
+    const cardH = (sH / zoom) * CARD_FRAC;
     const cardW = cardH * CARD_ASPECT;
-    const cardX = (vw - cardW) / 2;
-    const cardY = (vh - cardH) / 2;
+    const cardX = (sW - cardW) / 2;
+    const cardY = (sH - cardH) / 2;
 
     const sx = cardX + cardW * region.x;
     const sy = cardY + cardH * region.y;
     const sw = cardW * region.w;
     const sh = cardH * region.h;
 
-    const scale = opts.scale || 3;
+    // Normaliza a altura de saída para o OCR (bom p/ still de alta E p/ preview
+    // de baixa): amplia recortes pequenos, reduz recortes enormes, sem exagero.
+    const targetH = opts.targetH || 240;
+    const scale = Math.max(0.5, Math.min(4, targetH / sh));
+
     const c = document.createElement('canvas');
     c.width = Math.round(sw * scale);
     c.height = Math.round(sh * scale);
     const ctx = c.getContext('2d');
+    ctx.imageSmoothingQuality = 'high';
     // O rodapé costuma ser texto claro sobre fundo escuro → inverte.
     ctx.filter = opts.invert
       ? 'grayscale(1) invert(1) contrast(1.8) brightness(1.05)'
       : 'grayscale(1) contrast(1.75) brightness(1.06)';
-    ctx.drawImage(video, sx, sy, sw, sh, 0, 0, c.width, c.height);
+    ctx.drawImage(src, sx, sy, sw, sh, 0, 0, c.width, c.height);
     return c;
+  }
+
+  /**
+   * Captura um still da carta na MAIOR resolução disponível:
+   *  - ImageCapture.takePhoto() → foto no tamanho do sensor (Android/Chrome);
+   *  - grabFrame() → frame na resolução do stream;
+   *  - <video> → fallback (iOS/Safari, que não têm ImageCapture).
+   * Retorna { src, cleanup } onde src serve para o cropRegion.
+   */
+  async function grabStill(track, video) {
+    if (window.ImageCapture && track) {
+      try {
+        const ic = new ImageCapture(track);
+        try {
+          const blob = await ic.takePhoto();
+          const bmp = await createImageBitmap(blob);
+          return { src: bmp, cleanup: () => bmp.close && bmp.close() };
+        } catch {
+          const bmp = await ic.grabFrame();
+          return { src: bmp, cleanup: () => bmp.close && bmp.close() };
+        }
+      } catch { /* cai pro vídeo */ }
+    }
+    return { src: video, cleanup: () => {} };
   }
 
   async function ocr(canvas, mode) {
@@ -182,8 +213,9 @@
     video.muted = true;
 
     const guide = el('div', { class: 'scan-guide' }, el('div', { class: 'scan-guide-title' }, 'nome'));
-    const stage = el('div', { class: 'scan-stage' }, video, guide);
-    const status = el('div', { class: 'scan-status' }, 'Aproxime a carta e use o zoom até o nome preencher a faixa destacada.');
+    const torchBtn = el('button', { class: 'scan-torch', hidden: '', 'aria-pressed': 'false', title: 'Lanterna' }, '🔦');
+    const stage = el('div', { class: 'scan-stage' }, video, guide, torchBtn);
+    const status = el('div', { class: 'scan-status' }, 'Segure a carta parada e na distância em que a câmera focar (nítida). Use o zoom para o nome preencher a faixa — a foto é capturada em alta resolução.');
     const resultBox = el('div', { class: 'scan-result', hidden: '' });
 
     // Controle de zoom (nativo da câmera quando houver; senão, digital)
@@ -258,7 +290,11 @@
     // Abre a câmera (traseira quando disponível)
     try {
       stream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: { ideal: 'environment' }, width: { ideal: 1920 }, height: { ideal: 1080 } },
+        video: {
+          facingMode: { ideal: 'environment' },
+          width: { ideal: 3840 }, height: { ideal: 2160 },   // pede a maior resolução possível
+          advanced: [{ focusMode: 'continuous' }]
+        },
         audio: false
       });
       video.srcObject = stream;
@@ -275,6 +311,23 @@
     try {
       const track = stream.getVideoTracks()[0];
       const caps = track.getCapabilities ? track.getCapabilities() : {};
+
+      // Foco contínuo, quando suportado (essencial para o OCR não sair borrado)
+      if (caps && caps.focusMode && caps.focusMode.includes('continuous')) {
+        track.applyConstraints({ advanced: [{ focusMode: 'continuous' }] }).catch(() => {});
+      }
+
+      // Lanterna (torch): melhora muito a leitura em luz fraca — só quando há suporte
+      if (caps && caps.torch) {
+        let torchOn = false;
+        torchBtn.hidden = false;
+        torchBtn.addEventListener('click', () => {
+          torchOn = !torchOn;
+          track.applyConstraints({ advanced: [{ torch: torchOn }] }).catch(() => {});
+          torchBtn.classList.toggle('on', torchOn);
+          torchBtn.setAttribute('aria-pressed', String(torchOn));
+        });
+      }
       if (caps && caps.zoom && caps.zoom.max > caps.zoom.min) {
         nativeTrack = track;
         zoomMin = caps.zoom.min; zoomMax = caps.zoom.max;
@@ -296,18 +349,25 @@
       status.classList.remove('scan-status-error');
       status.textContent = window.Tesseract ? 'Reconhecendo a carta…' : 'Preparando o leitor de texto (só na 1ª vez)…';
 
+      let still = null;
       try {
         await getWorker();
 
+        // Captura um still na maior resolução possível (foto do sensor).
+        status.textContent = 'Capturando em alta resolução…';
+        const track = stream && stream.getVideoTracks()[0];
+        still = await grabStill(track, video);
+        const src = still.src;
+
         // 1. Nome (topo)
         status.textContent = 'Lendo o nome…';
-        const nameGuess = cleanName(await ocr(cropRegion(video, digitalZoom, TITLE), 'title'));
+        const nameGuess = cleanName(await ocr(cropRegion(src, digitalZoom, TITLE, { targetH: 260 }), 'title'));
 
         // 2. Edição + número (rodapé) — best-effort, não quebra se falhar
         let parsed = { set: '', number: '' };
         try {
           status.textContent = 'Lendo edição e número…';
-          parsed = parseBottom(await ocr(cropRegion(video, digitalZoom, BOTTOM, { invert: true }), 'bottom'));
+          parsed = parseBottom(await ocr(cropRegion(src, digitalZoom, BOTTOM, { invert: true, targetH: 220 }), 'bottom'));
         } catch { /* segue só com o nome */ }
 
         // 3. Junta os sinais em candidatas
@@ -319,6 +379,7 @@
         status.classList.add('scan-status-error');
         status.textContent = 'Não consegui identificar. Melhore a luz e o zoom (o nome deve preencher a faixa) e tente de novo.';
       } finally {
+        if (still && still.cleanup) still.cleanup();
         captureBtn.disabled = false;
       }
     }
